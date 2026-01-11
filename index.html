@@ -12,8 +12,8 @@
       --muted:#6b7280;
       --line:#e5e7eb;
       --accent:#2563eb;
-      --sidebar: 320px;
-      --max: 1100px;
+      --sidebar:320px;
+      --max:1100px;
     }
     *{box-sizing:border-box}
     body{
@@ -25,64 +25,16 @@
     }
 
     .layout{display:flex; min-height:100vh;}
-
-    /* Sidebar */
     aside{
       width:var(--sidebar);
       padding:28px 22px;
       border-right:1px solid var(--line);
-      background:#fff;
       position:sticky; top:0; height:100vh; overflow:auto;
-    }
-    .avatar{
-      width:170px; height:170px;
-      border-radius:999px;
-      object-fit:cover;
-      border:6px solid #fff;
-      box-shadow: 0 6px 18px rgba(17,24,39,.08);
-      display:block;
-      margin:6px auto 14px;
-      background:#ddd;
-    }
-    .name{ text-align:center; font-size:22px; font-weight:900; margin:0; }
-    .tagline{ text-align:center; color:var(--muted); margin:6px 0 14px; font-weight:600; }
-
-    .pillrow{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin:10px 0 18px;}
-    .pill{
-      font-size:12px;
-      color:#1f3a8a;
-      background:#eff6ff;
-      border:1px solid #dbeafe;
-      padding:6px 10px;
-      border-radius:999px;
-      font-weight:800;
-    }
-
-    .side-links{margin-top:14px; display:grid; gap:10px;}
-    .side-link{
-      display:flex; align-items:center; gap:10px;
-      padding:10px 12px;
-      border-radius:14px;
-      border:1px solid var(--line);
       background:#fff;
-      text-decoration:none;
-      color:var(--text);
     }
-    .side-link small{color:var(--muted); display:block; margin-top:2px}
-    .icon{
-      width:34px; height:34px;
-      border-radius:12px;
-      display:grid;
-      place-items:center;
-      background:#eff6ff;
-      color:var(--accent);
-      font-weight:900;
-      flex:0 0 auto;
-    }
-
     main{flex:1; min-width:0;}
 
-    /* Top nav (no "Portfolio" text) */
+    /* Top Nav (clean + centered) */
     .topbar{
       position:sticky; top:0; z-index:10;
       background:rgba(255,255,255,.92);
@@ -101,60 +53,141 @@
     .brand{
       font-weight:900;
       letter-spacing:.2px;
+      color:var(--text);
+      text-decoration:none;
       white-space:nowrap;
     }
     nav{
       display:flex;
-      gap:10px;
+      gap:18px;
+      align-items:center;
       flex-wrap:wrap;
-      justify-content:flex-end;
     }
     nav a{
       color:var(--muted);
       text-decoration:none;
-      font-weight:700;
-      padding:8px 10px;
-      border-radius:10px;
+      font-weight:650;
+      padding:8px 6px;
+      border-bottom:2px solid transparent;
     }
-    nav a:hover, nav a.active{
+    nav a:hover{color:var(--text)}
+    nav a.active{
       color:var(--accent);
-      background:#eff6ff;
+      border-bottom-color:var(--accent);
     }
     .hamburger{
       display:none;
       border:1px solid var(--line);
       background:#fff;
-      border-radius:12px;
+      border-radius:10px;
       padding:8px 10px;
       cursor:pointer;
       font-weight:800;
+    }
+
+    /* Sidebar */
+    .avatar{
+      width:170px; height:170px;
+      border-radius:999px;
+      object-fit:cover;
+      display:block;
+      margin:6px auto 14px;
+      background:#e5e7eb;
+      border:6px solid #fff;
+      box-shadow: 0 10px 25px rgba(17,24,39,.08);
+    }
+    .name{
+      text-align:center;
+      font-size:22px;
+      font-weight:950;
+      margin:0;
+    }
+    .tagline{
+      text-align:center;
+      color:var(--muted);
+      margin:6px 0 14px;
+      font-weight:600;
+    }
+    .pillrow{
+      display:flex; flex-wrap:wrap; gap:8px;
+      justify-content:center;
+      margin:10px 0 18px;
+    }
+    .pill{
+      font-size:12px;
+      color:#0b2a6f;
+      background:#eef2ff;
+      border:1px solid #dbe3ff;
+      padding:6px 10px;
+      border-radius:999px;
+      font-weight:800;
+    }
+    .side-links{
+      margin-top:14px;
+      display:grid;
+      gap:10px;
+    }
+    .side-link{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 12px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      text-decoration:none;
+      color:var(--text);
+      background:#fff;
+    }
+    .side-link small{color:var(--muted); display:block; margin-top:2px}
+    .icon{
+      width:34px; height:34px;
+      border-radius:10px;
+      display:grid;
+      place-items:center;
+      background:#f3f4f6;
+      color:#111827;
+      font-weight:900;
+      flex:0 0 auto;
     }
 
     /* Content */
     .wrap{
       max-width:var(--max);
       margin:0 auto;
-      padding:26px 18px 44px;
+      padding:28px 18px 50px;
     }
-    .title{
+    h1,h2,h3{line-height:1.25}
+    .greet{
+      font-size:26px;
+      font-weight:950;
+      margin:10px 0 12px;
+      letter-spacing:.2px;
+    }
+    .lead{
+      font-size:16.5px;
+      color:#111827;
       margin:0 0 14px;
-      font-size:28px;
-      font-weight:900;
     }
-    .lead{color:var(--muted); margin:0 0 16px; font-size:15.5px;}
+    .muted{color:var(--muted)}
     .section{
-      margin-top:24px;
-      padding-top:18px;
+      margin-top:22px;
+      padding-top:16px;
       border-top:1px solid var(--line);
     }
-    .h{
-      margin:0 0 10px;
-      font-size:18px;
-      font-weight:900;
+    .mini-list{
+      margin:10px 0 0;
+      padding-left:18px;
     }
-    ul{margin:10px 0 0; padding-left:18px;}
-    li{margin:8px 0;}
-    .footer{ text-align:center; color:var(--muted); margin-top:26px; font-size:13px; }
+    .mini-list li{margin:6px 0}
+
+    .footer{
+      margin-top:28px;
+      padding-top:14px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+      font-size:13px;
+      text-align:center;
+    }
 
     @media (max-width: 980px){
       .layout{flex-direction:column}
@@ -169,7 +202,6 @@
       .hamburger{display:inline-block}
       nav.open{display:flex; flex-direction:column; align-items:flex-start; width:100%}
       .avatar{width:140px;height:140px}
-      .title{font-size:24px}
     }
   </style>
 </head>
@@ -180,7 +212,7 @@
     <aside>
       <img class="avatar" src="assets/profile.jpg" alt="Zarin Tasnim Roichi" />
       <h1 class="name">Zarin Tasnim Roichi</h1>
-      <div class="tagline">Applied ML/NLP • LLMs • Backend • IoT</div>
+      <div class="tagline">ML / NLP • LLMs • Backend • IoT</div>
 
       <div class="pillrow">
         <span class="pill">Python</span>
@@ -200,31 +232,25 @@
           <div><b>GitHub</b><small>github.com/ZarinRoichi</small></div>
         </a>
 
-        <a class="side-link" href="https://linkedin.com/in/zarin-tasnim-roichi" target="_blank" rel="noreferrer">
-          <div class="icon">in</div>
-          <div><b>LinkedIn</b><small>zarin-tasnim-roichi</small></div>
-        </a>
-
         <a class="side-link" href="resume/Zarin_Tasnim_Roichi_CV.pdf" target="_blank" rel="noreferrer">
           <div class="icon">CV</div>
-          <div><b>Resume</b><small>Download PDF</small></div>
+          <div><b>Resume</b><small>Open PDF</small></div>
         </a>
       </div>
 
-      <p style="margin:18px 6px 0; font-size:13px; color:var(--muted);">
-        Fresh graduate (CSE, AUST). Open to internships / entry-level roles.
+      <p class="muted" style="margin:18px 6px 0; font-size:13px;">
+        CSE graduate (AUST). Open to internships / entry-level roles.
       </p>
     </aside>
 
     <main>
       <div class="topbar">
         <div class="topbar-inner">
-          <div class="brand">ZarinRoichi</div>
-
+          <a class="brand" href="index.html">ZarinRoichi</a>
           <button class="hamburger" id="menuBtn">☰ Menu</button>
 
           <nav id="nav">
-            <a href="index.html" class="active">Home</a>
+            <a class="active" href="index.html">Home</a>
             <a href="projects.html">Projects</a>
             <a href="research.html">Research</a>
             <a href="education.html">Education</a>
@@ -234,30 +260,26 @@
       </div>
 
       <div class="wrap">
-        <h2 class="title">Greetings! 👋</h2>
+        <div class="greet">Hi! 👋</div>
+
         <p class="lead">
-          I am <b>Zarin Tasnim Roichi</b>, a Computer Science and Engineering graduate from Ahsanullah University of Science and Technology (AUST).
-          I’m interested in <b>Machine Learning</b>, <b>NLP</b>, <b>LLM-based workflows</b>, and building practical systems with strong backend foundations.
+          I’m <b>Zarin Tasnim Roichi</b>, a Computer Science graduate from <b>Ahsanullah University of Science and Technology (AUST)</b>.
+          I work on <b>Applied Machine Learning</b>, <b>Bengali NLP</b>, and <b>LLM-oriented workflows</b> — and I enjoy turning models into usable systems.
         </p>
 
-        <p>
-          My recent work focuses on applied Bengali NLP tasks like <b>fake review detection</b>, <b>fake news detection</b>, and
-          <b>sentiment analysis</b> using transformer models (fine-tuning, evaluation, and error analysis). I also explore
-          <b>multimodal learning</b> (text + image) and enjoy connecting ML with real products through <b>Python APIs</b> and <b>SQL-backed web apps</b>.
-        </p>
-
-        <p>
-          Alongside ML/NLP, I have built software systems (attendance/leave tracking, CRUD-based applications) and completed an offline
-          <b>IoT home automation</b> project using Arduino with an Android voice-control app.
+        <p class="lead">
+          My recent work includes transformer-based Bengali classification for <b>fake review</b> and <b>fake news</b> detection, as well as
+          <b>sentiment analysis</b> with fine-tuning and evaluation. I’m also exploring <b>multimodal learning</b> (text + image) and practical
+          deployment via <b>Python APIs</b> and <b>SQL-backed web applications</b>.
         </p>
 
         <div class="section">
-          <h3 class="h">What you’ll find here</h3>
-          <ul>
-            <li><b>Projects:</b> implementation + code (ML, software, IoT)</li>
-            <li><b>Research:</b> interests, ongoing directions, and study focus (not code dump)</li>
-            <li><b>Education:</b> academic background</li>
-            <li><b>CV:</b> PDF view/download</li>
+          <h3 style="margin:0 0 8px;">What I’m focusing on</h3>
+          <ul class="mini-list">
+            <li>Transformer / LLM-style fine-tuning (PEFT/LoRA) + evaluation</li>
+            <li>Bangla NLP for misinformation & sentiment</li>
+            <li>Backend integration: APIs, databases, and deployment</li>
+            <li>Hands-on IoT implementation experience (Arduino + Android control)</li>
           </ul>
         </div>
 
