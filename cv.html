@@ -1,117 +1,158 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Zarin Tasnim Roichi | CV</title>
 
   <style>
-    :root{--bg:#ffffff;--text:#111827;--muted:#6b7280;--line:#e5e7eb;--accent:#2563eb;--sidebar:320px;--max:1100px;}
+    :root{--bg:#ffffff;--text:#111827;--muted:#6b7280;--accent:#2563eb;--sidebar:320px;--max:1060px;}
     *{box-sizing:border-box}
-    body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";background:var(--bg);color:var(--text);line-height:1.85;}
+    body{
+      margin:0;
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.8;
+    }
+    a{color:var(--accent);text-decoration:none}
+
     .layout{display:flex;min-height:100vh;}
-    aside{width:var(--sidebar);padding:28px 22px;border-right:1px solid var(--line);background:#fff;position:sticky;top:0;height:100vh;overflow:auto;}
+    aside{
+      width:var(--sidebar);
+      padding:28px 22px;
+      border-right:1px solid #e5e7eb;
+      position:sticky;top:0;height:100vh;overflow:auto;
+      background:#fff;
+    }
     main{flex:1;min-width:0;}
 
-    .avatar{width:170px;height:170px;border-radius:999px;object-fit:cover;border:6px solid #fff;box-shadow:0 6px 18px rgba(17,24,39,.08);display:block;margin:6px auto 14px;background:#ddd;}
-    .name{text-align:center;font-size:22px;font-weight:900;margin:0;}
-    .tagline{text-align:center;color:var(--muted);margin:6px 0 14px;font-weight:600;}
-    .pillrow{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:10px 0 18px;}
-    .pill{font-size:12px;color:#1f3a8a;background:#eff6ff;border:1px solid #dbeafe;padding:6px 10px;border-radius:999px;font-weight:800;}
-    .side-links{margin-top:14px;display:grid;gap:10px;}
-    .side-link{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:14px;border:1px solid var(--line);background:#fff;text-decoration:none;color:var(--text);}
-    .side-link small{color:var(--muted);display:block;margin-top:2px}
-    .icon{width:34px;height:34px;border-radius:12px;display:grid;place-items:center;background:#eff6ff;color:var(--accent);font-weight:900;flex:0 0 auto;}
+    .topbar{
+      position:sticky;top:0;z-index:10;
+      background:rgba(255,255,255,.92);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid #e5e7eb;
+    }
+    .topbar-inner{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:14px 18px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+    .brand{font-weight:900}
+    nav{display:flex;gap:18px}
+    nav a{color:var(--muted);font-weight:650}
+    nav a.active{color:var(--accent)}
 
-    .topbar{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
-    .topbar-inner{max-width:var(--max);margin:0 auto;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:14px;}
-    .brand{font-weight:900;letter-spacing:.2px;white-space:nowrap;}
-    nav{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end;}
-    nav a{color:var(--muted);text-decoration:none;font-weight:700;padding:8px 10px;border-radius:10px;}
-    nav a:hover,nav a.active{color:var(--accent);background:#eff6ff;}
-    .hamburger{display:none;border:1px solid var(--line);background:#fff;border-radius:12px;padding:8px 10px;cursor:pointer;font-weight:800;}
+    .avatar{
+      width:160px;height:160px;border-radius:999px;
+      object-fit:cover;display:block;margin:6px auto 12px;
+      background:#e5e7eb;border:6px solid #fff;
+    }
+    .name{text-align:center;font-size:22px;font-weight:950;margin:0}
+    .tagline{text-align:center;color:var(--muted);margin:6px 0 14px;font-weight:600}
 
-    .wrap{max-width:var(--max);margin:0 auto;padding:26px 18px 44px;}
-    h2{margin:0 0 10px;font-size:26px;font-weight:900;}
-    .sub{color:var(--muted);margin:0 0 18px;}
-    .actions{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0 14px;}
-    .btn{display:inline-flex;align-items:center;gap:8px;padding:9px 11px;border-radius:12px;border:1px solid #dbeafe;background:#eff6ff;color:var(--accent);text-decoration:none;font-weight:900;}
-    .btn2{border:1px solid var(--line);background:#fff;color:var(--text);}
+    .side-links{display:grid;gap:10px}
+    .side-link{
+      display:flex;align-items:center;gap:10px;
+      padding:10px 12px;border-radius:12px;
+      border:1px solid #e5e7eb;color:var(--text);
+    }
+    .icon{
+      width:34px;height:34px;border-radius:10px;
+      display:grid;place-items:center;background:#f3f4f6;
+      font-weight:900;
+    }
 
-    .pdf{width:100%;height:78vh;border:1px solid var(--line);border-radius:14px;background:#fff;}
+    .wrap{max-width:var(--max);margin:0 auto;padding:28px 18px 56px}
+    .page-title{font-size:32px;font-weight:950;margin:6px 0 10px}
+    .sub{color:var(--muted);margin:0 0 18px}
 
-    .footer{text-align:center;color:var(--muted);margin-top:26px;font-size:13px;}
+    .actions{display:flex;gap:14px;margin-bottom:18px}
+    .action-link{font-weight:700}
+
+    iframe{
+      width:100%;
+      height:82vh;
+      border:none;
+    }
+
+    .footer{
+      margin-top:36px;
+      color:var(--muted);
+      font-size:13px;
+      text-align:center;
+    }
 
     @media (max-width:980px){
       .layout{flex-direction:column}
-      aside{width:auto;position:relative;height:auto;border-right:none;border-bottom:1px solid var(--line);}
+      aside{width:auto;height:auto;border-right:none;border-bottom:1px solid #e5e7eb}
       nav{display:none}
-      .hamburger{display:inline-block}
-      nav.open{display:flex;flex-direction:column;align-items:flex-start;width:100%}
       .avatar{width:140px;height:140px}
-      .pdf{height:70vh}
+      iframe{height:75vh}
     }
   </style>
 </head>
 
 <body>
-  <div class="layout">
+<div class="layout">
 
-    <aside>
-      <img class="avatar" src="assets/profile.jpg" alt="Zarin Tasnim Roichi" />
-      <h1 class="name">Zarin Tasnim Roichi</h1>
-      <div class="tagline">CV</div>
+  <!-- SIDEBAR -->
+  <aside>
+    <img class="avatar" src="assets/profile.jpg" alt="Zarin Tasnim Roichi"/>
+    <h1 class="name">Zarin Tasnim Roichi</h1>
+    <div class="tagline">Curriculum Vitae</div>
 
-      <div class="pillrow">
-        <span class="pill">PDF</span>
-        <span class="pill">Updated</span>
+    <div class="side-links">
+      <a class="side-link" href="mailto:zarinroichi@gmail.com">
+        <div class="icon">✉</div><div>Email</div>
+      </a>
+      <a class="side-link" href="https://github.com/ZarinRoichi" target="_blank">
+        <div class="icon">GH</div><div>GitHub</div>
+      </a>
+      <a class="side-link" href="resume/Zarin_Tasnim_Roichi_CV.pdf" target="_blank">
+        <div class="icon">CV</div><div>Open PDF</div>
+      </a>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main>
+    <div class="topbar">
+      <div class="topbar-inner">
+        <div class="brand">ZarinRoichi</div>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="projects.html">Projects</a>
+          <a href="research.html">Research</a>
+          <a href="education.html">Education</a>
+          <a class="active" href="cv.html">CV</a>
+        </nav>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <div class="page-title">Curriculum Vitae</div>
+      <p class="sub">Latest academic CV (PDF).</p>
+
+      <div class="actions">
+        <a class="action-link" href="resume/Zarin_Tasnim_Roichi_CV.pdf" target="_blank">Open PDF</a>
+        <a class="action-link" href="resume/Zarin_Tasnim_Roichi_CV.pdf" download>Download</a>
       </div>
 
-      <div class="side-links">
-        <a class="side-link" href="mailto:zarinroichi@gmail.com"><div class="icon">✉</div><div><b>Email</b><small>zarinroichi@gmail.com</small></div></a>
-        <a class="side-link" href="https://github.com/ZarinRoichi" target="_blank" rel="noreferrer"><div class="icon">GH</div><div><b>GitHub</b><small>ZarinRoichi</small></div></a>
-        <a class="side-link" href="resume/Zarin_Tasnim_Roichi_CV.pdf" target="_blank" rel="noreferrer"><div class="icon">CV</div><div><b>Open PDF</b><small>Resume</small></div></a>
+      <iframe src="resume/Zarin_Tasnim_Roichi_CV.pdf"></iframe>
+
+      <div class="footer">
+        © <span id="year"></span> Zarin Tasnim Roichi
       </div>
-    </aside>
+    </div>
+  </main>
+</div>
 
-    <main>
-      <div class="topbar">
-        <div class="topbar-inner">
-          <div class="brand">ZarinRoichi</div>
-          <button class="hamburger" id="menuBtn">☰ Menu</button>
-          <nav id="nav">
-            <a href="index.html">Home</a>
-            <a href="projects.html">Projects</a>
-            <a href="research.html">Research</a>
-            <a href="education.html">Education</a>
-            <a href="cv.html" class="active">CV</a>
-          </nav>
-        </div>
-      </div>
-
-      <div class="wrap">
-        <h2>Curriculum Vitae</h2>
-        <p class="sub">View or download the PDF.</p>
-
-        <div class="actions">
-          <a class="btn" href="resume/Zarin_Tasnim_Roichi_CV.pdf" target="_blank" rel="noreferrer">Open PDF</a>
-          <a class="btn btn2" href="resume/Zarin_Tasnim_Roichi_CV.pdf" download>Download</a>
-        </div>
-
-        <iframe class="pdf" src="resume/Zarin_Tasnim_Roichi_CV.pdf"></iframe>
-
-        <div class="footer">
-          © <span id="year"></span> Zarin Tasnim Roichi • Built with GitHub Pages
-        </div>
-      </div>
-    </main>
-  </div>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-    const btn = document.getElementById("menuBtn");
-    const nav = document.getElementById("nav");
-    btn?.addEventListener("click", () => nav.classList.toggle("open"));
-  </script>
+<script>
+  document.getElementById("year").textContent=new Date().getFullYear();
+</script>
 </body>
 </html>
