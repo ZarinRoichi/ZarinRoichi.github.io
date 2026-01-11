@@ -1,59 +1,109 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Zarin Tasnim Roichi | Research</title>
+
   <style>
-    :root{--bg:#fff;--text:#111827;--muted:#6b7280;--line:#e5e7eb;--accent:#2563eb;--sidebar:320px;--max:1100px}
-    *{box-sizing:border-box} body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;line-height:1.75;background:var(--bg);color:var(--text)}
-    .layout{display:flex;min-height:100vh} aside{width:var(--sidebar);padding:28px 22px;border-right:1px solid var(--line);position:sticky;top:0;height:100vh;overflow:auto;background:#fff}
-    main{flex:1;min-width:0}
-    .avatar{width:170px;height:170px;border-radius:999px;object-fit:cover;border:6px solid #fff;box-shadow:0 6px 18px rgba(17,24,39,.08);display:block;margin:6px auto 14px;background:#ddd}
-    .name{text-align:center;font-size:22px;font-weight:900;margin:0} .tagline{text-align:center;color:var(--muted);margin:6px 0 14px;font-weight:600}
-    .pillrow{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:10px 0 18px}
-    .pill{font-size:12px;font-weight:800;color:#1f3a8a;background:#eff6ff;border:1px solid #dbeafe;padding:6px 10px;border-radius:999px}
-    .side-links{margin-top:14px;display:grid;gap:10px}
-    .side-link{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:14px;border:1px solid var(--line);text-decoration:none;color:var(--text);background:#fff}
+    :root{--bg:#ffffff;--text:#111827;--muted:#6b7280;--line:#e5e7eb;--accent:#2563eb;--sidebar:320px;--max:1060px;}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";background:var(--bg);color:var(--text);line-height:1.85;}
+    a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+
+    .layout{display:flex;min-height:100vh;}
+    aside{width:var(--sidebar);padding:28px 22px;border-right:1px solid var(--line);position:sticky;top:0;height:100vh;overflow:auto;background:#fff;}
+    main{flex:1;min-width:0;}
+
+    .topbar{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+    .topbar-inner{max-width:var(--max);margin:0 auto;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+    .brand{font-weight:900;letter-spacing:.2px;color:var(--text);white-space:nowrap;}
+    nav{display:flex;gap:18px;align-items:center;flex-wrap:wrap;}
+    nav a{color:var(--muted);font-weight:650;padding:8px 4px;border-bottom:2px solid transparent;}
+    nav a:hover{color:var(--text);text-decoration:none}
+    nav a.active{color:var(--accent);border-bottom-color:var(--accent);}
+    .hamburger{display:none;border:1px solid var(--line);background:#fff;border-radius:10px;padding:8px 10px;cursor:pointer;font-weight:800;}
+
+    .avatar{width:170px;height:170px;border-radius:999px;object-fit:cover;display:block;margin:6px auto 14px;background:#e5e7eb;border:6px solid #fff;box-shadow:0 10px 25px rgba(17,24,39,.08);}
+    .name{text-align:center;font-size:22px;font-weight:950;margin:0;}
+    .tagline{text-align:center;color:var(--muted);margin:6px 0 14px;font-weight:600;}
+    .pillrow{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:10px 0 18px;}
+    .pill{font-size:12px;color:#0b2a6f;background:#eef2ff;border:1px solid #dbe3ff;padding:6px 10px;border-radius:999px;font-weight:800;}
+    .side-links{margin-top:14px;display:grid;gap:10px;}
+    .side-link{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:12px;border:1px solid var(--line);color:var(--text);background:#fff;text-decoration:none;}
+    .side-link:hover{text-decoration:none;border-color:#d1d5db}
     .side-link small{color:var(--muted);display:block;margin-top:2px}
-    .icon{width:34px;height:34px;border-radius:12px;display:grid;place-items:center;background:#eff6ff;color:var(--accent);font-weight:900;flex:0 0 auto}
-    .topbar{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-    .topbar-inner{max-width:var(--max);margin:0 auto;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:14px}
-    .brand{font-weight:900;letter-spacing:.2px;white-space:nowrap}
-    nav{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
-    nav a{color:var(--muted);text-decoration:none;font-weight:700;padding:8px 10px;border-radius:10px}
-    nav a:hover,nav a.active{color:var(--accent);background:#eff6ff}
-    .hamburger{display:none;border:1px solid var(--line);background:#fff;border-radius:12px;padding:8px 10px;cursor:pointer;font-weight:800}
-    .wrap{max-width:var(--max);margin:0 auto;padding:26px 18px 44px}
-    h1{margin:0 0 10px;font-size:32px;font-weight:900} .muted{color:var(--muted);margin:0}
-    .intro{background:#f9fafb;border:1px solid var(--line);border-left:5px solid var(--accent);padding:18px 18px;border-radius:14px;margin:6px 0 26px}
-    .grid{display:flex;flex-direction:column;gap:18px}
-    .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;transition:.18s ease}
-    .card:hover{border-color:#c7d2fe;box-shadow:0 10px 22px rgba(0,0,0,.05)}
-    .card h2{margin:0 0 8px;font-size:20px;font-weight:900}
-    .card p{margin:0;color:#4b5563}
-    .tags{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 10px}
-    .tag{font-size:12px;font-weight:700;background:#f1f5f9;border:1px solid #e2e8f0;padding:6px 10px;border-radius:999px;color:#0f172a}
-    .btn{display:inline-block;margin-top:8px;padding:10px 14px;border-radius:12px;background:#2563eb;color:#fff;text-decoration:none;font-weight:800}
-    .btn:hover{background:#1d4ed8}
-    .note{margin-top:18px;padding:12px 14px;border:1px dashed var(--line);border-radius:14px;color:var(--muted)}
-    .footer{text-align:center;color:var(--muted);margin-top:22px;font-size:13px}
+    .icon{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:#f3f4f6;color:#111827;font-weight:900;flex:0 0 auto;}
+
+    .wrap{max-width:var(--max);margin:0 auto;padding:28px 18px 56px;}
+    .page-title{font-size:44px;font-weight:950;letter-spacing:.2px;margin:12px 0 18px;}
+    .sub{color:var(--muted);margin:0 0 18px;}
+
+    /* ====== IMPORTANT: SAME CARD STYLE FOR ALL ====== */
+    .intro{
+      background:#f9fafb;border:1px solid var(--line);border-left:6px solid var(--accent);
+      border-radius:16px;padding:18px 18px;margin:0 0 22px;
+    }
+    .intro p{margin:0;color:#374151}
+
+    .cards{display:flex;flex-direction:column;gap:18px;margin-top:10px;}
+    .card{
+      background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;
+      transition:all .18s ease;
+    }
+    .card:hover{border-color:#c7d2fe;box-shadow:0 10px 22px rgba(0,0,0,.05);}
+    .card h2{margin:0 0 10px;font-size:26px;font-weight:950;}
+    .card p{margin:0;color:#4b5563;line-height:1.75;}
+
+    .tags{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0 14px;}
+    .tag{
+      font-size:13px;font-weight:800;color:#0f172a;
+      background:#f1f5f9;border:1px solid #e2e8f0;
+      padding:8px 14px;border-radius:999px;
+    }
+
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:12px 18px;border-radius:14px;
+      background:var(--accent);color:#fff;font-weight:900;
+      text-decoration:none;
+      box-shadow:0 10px 20px rgba(37,99,235,.18);
+    }
+    .btn:hover{background:#1d4ed8;text-decoration:none}
+
+    .note{
+      margin-top:20px;padding:12px 14px;border:1px dashed var(--line);
+      border-radius:14px;color:var(--muted);
+    }
+
+    .footer{margin-top:28px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:13px;text-align:center;}
+
     @media (max-width:980px){
-      .layout{flex-direction:column} aside{width:auto;position:relative;height:auto;border-right:none;border-bottom:1px solid var(--line)}
-      nav{display:none} .hamburger{display:inline-block} nav.open{display:flex;flex-direction:column;align-items:flex-start;width:100%}
+      .layout{flex-direction:column}
+      aside{width:auto;position:relative;height:auto;border-right:none;border-bottom:1px solid var(--line);}
+      nav{display:none}
+      .hamburger{display:inline-block}
+      nav.open{display:flex;flex-direction:column;align-items:flex-start;width:100%}
       .avatar{width:140px;height:140px}
+      .page-title{font-size:34px}
     }
   </style>
 </head>
+
 <body>
   <div class="layout">
     <aside>
-      <img class="avatar" src="assets/profile.jpg" alt="Zarin Tasnim Roichi"/>
+      <img class="avatar" src="assets/profile.jpg" alt="Zarin Tasnim Roichi" />
       <h1 class="name">Zarin Tasnim Roichi</h1>
       <div class="tagline">Applied NLP • LLMs • Misinformation</div>
+
       <div class="pillrow">
-        <span class="pill">Research</span><span class="pill">Bengali NLP</span><span class="pill">LLMs</span><span class="pill">Multimodal</span>
+        <span class="pill">Research</span>
+        <span class="pill">Bangla NLP</span>
+        <span class="pill">LLMs</span>
+        <span class="pill">Multimodal</span>
       </div>
+
       <div class="side-links">
         <a class="side-link" href="mailto:zarinroichi@gmail.com"><div class="icon">✉</div><div><b>Email</b><small>zarinroichi@gmail.com</small></div></a>
         <a class="side-link" href="https://github.com/ZarinRoichi" target="_blank" rel="noreferrer"><div class="icon">GH</div><div><b>GitHub</b><small>ZarinRoichi</small></div></a>
@@ -77,65 +127,94 @@
       </div>
 
       <div class="wrap">
-        <h1>Research</h1>
+        <div class="page-title">Research</div>
+
         <div class="intro">
-          <p class="muted">
+          <p>
             My research focuses on <b>Bengali NLP</b> and practical ML evaluation. I work with transformer-based models for
             classification (fake reviews/news, sentiment), study dataset balancing and error patterns, and build deployable pipelines.
           </p>
         </div>
 
-        <div class="grid">
+        <div class="cards">
+
           <div class="card">
             <h2>1) Bengali Fake Review Detection</h2>
             <p>
-              Explored transformer-based Bengali review classification by training and comparing multiple pretrained models.
+              Explored transformer-based Bengali review classification by training and comparing pretrained models.
               Emphasis was placed on dataset balancing, class-wise behavior, and error analysis to understand where models fail and why.
             </p>
             <div class="tags">
-              <span class="tag">BanglaBERT</span><span class="tag">XLM-R</span><span class="tag">Evaluation</span><span class="tag">Error Analysis</span>
+              <span class="tag">BanglaBERT</span>
+              <span class="tag">XLM-R</span>
+              <span class="tag">Evaluation</span>
+              <span class="tag">Error Analysis</span>
             </div>
-            <a class="btn" href="https://github.com/ZarinRoichi/bengali-fake-review-detection" target="_blank" rel="noreferrer">GitHub Repo</a>
+            <a class="btn"
+   href="https://github.com/ZarinRoichi/BengaliFakeReview"
+   target="_blank" rel="noreferrer">
+  GitHub Repo
+</a>
+
           </div>
 
           <div class="card">
-            <h2>2) Sentiment Analysis of Bengali Movie Reviews</h2>
+            <h2>2) Bengali Fake News Detection</h2>
             <p>
-              Fine-tuned transformer models for Bengali sentiment classification with a focus on efficient training.
-              Used PEFT-style methods (e.g., LoRA) and compared setups to track accuracy, stability, and generalization across splits.
+              Built and evaluated Bengali misinformation classification pipelines using transformer models.
+              Compared training settings and preprocessing choices to improve generalization and reliability across unseen news-style text.
             </p>
             <div class="tags">
-              <span class="tag">Transformers</span><span class="tag">LoRA / PEFT</span><span class="tag">Pipeline</span><span class="tag">NLP</span>
+              <span class="tag">NLP</span>
+              <span class="tag">Transformers</span>
+              <span class="tag">Metrics</span>
+              <span class="tag">Pipeline</span>
             </div>
-            <a class="btn" href="https://github.com/ZarinRoichi/bengali-sentiment-analysis" target="_blank" rel="noreferrer">GitHub Repo</a>
+            <a class="btn"
+   href="https://github.com/ZarinRoichi/BengaliFakeNewsDetection"
+   target="_blank" rel="noreferrer">
+  GitHub Repo
+</a>
+
           </div>
 
           <div class="card">
-            <h2>3) Multimodal Fake News Detection</h2>
+            <h2>3) Sentiment Analysis of Bengali Movie Reviews</h2>
             <p>
-              Built a multimodal system combining textual transformers with image features and compared unimodal vs multimodal performance.
-              Used late-fusion to merge signals and analyzed how text+image improves reliability over text-only baselines.
+              Fine-tuned transformer models for Bengali sentiment classification with efficient training methods.
+              Applied PEFT/LoRA-style tuning and tracked performance across different settings to ensure stable, reproducible results.
             </p>
             <div class="tags">
-              <span class="tag">Text + Image</span><span class="tag">Late Fusion</span><span class="tag">Multimodal</span><span class="tag">Fake News</span>
+              <span class="tag">Transformers</span>
+              <span class="tag">LoRA / PEFT</span>
+              <span class="tag">Evaluation</span>
+              <span class="tag">Bengali NLP</span>
             </div>
-            <a class="btn" href="https://github.com/ZarinRoichi/multimodal-fake-news" target="_blank" rel="noreferrer">GitHub Repo</a>
+            <a class="btn"
+   href="https://github.com/ZarinRoichi/SentimentAnalysisofMovieReviews"
+   target="_blank" rel="noreferrer">
+  GitHub Repo
+</a>
+
           </div>
+
         </div>
 
         <div class="note">
-          <b>Publications:</b> Not added yet — will update once accepted/published.
+          <b>Publications:</b> Currently none (will be updated as work gets published).
         </div>
 
-        <div class="footer">© <span id="year"></span> Zarin Tasnim Roichi • Built with GitHub Pages</div>
+        <div class="footer">
+          © <span id="year"></span> Zarin Tasnim Roichi • Built with GitHub Pages
+        </div>
       </div>
     </main>
   </div>
 
   <script>
     document.getElementById("year").textContent=new Date().getFullYear();
-    const b=document.getElementById("menuBtn"),n=document.getElementById("nav");
-    b&&b.addEventListener("click",()=>n.classList.toggle("open"));
+    const btn=document.getElementById("menuBtn"),nav=document.getElementById("nav");
+    btn?.addEventListener("click",()=>nav.classList.toggle("open"));
   </script>
 </body>
 </html>
