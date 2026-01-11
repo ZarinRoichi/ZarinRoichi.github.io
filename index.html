@@ -9,38 +9,44 @@
     :root{--bg:#fff;--text:#111827;--muted:#6b7280;--line:#e5e7eb;--accent:#2563eb;--sidebar:320px;--max:1060px}
     *{box-sizing:border-box}
     body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;line-height:1.8;background:var(--bg);color:var(--text)}
-    a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
 
     .layout{display:flex;min-height:100vh}
     aside{width:var(--sidebar);padding:26px 22px;border-right:1px solid var(--line);position:sticky;top:0;height:100vh;overflow:auto;background:#fff}
     main{flex:1;min-width:0}
 
-    .topbar{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+    /* Top (simple like academic pages) */
+    .topbar{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid var(--line)}
     .topbar-inner{max-width:var(--max);margin:0 auto;padding:14px 18px;display:flex;justify-content:space-between;align-items:center}
-    .brand{font-weight:900}
-    nav{display:flex;gap:18px}
-    nav a{color:var(--muted);font-weight:650;padding:6px 4px;border-bottom:2px solid transparent}
-    nav a.active{color:var(--accent);border-bottom-color:var(--accent)}
+    .brand{font-weight:900;letter-spacing:.2px}
+    nav{display:flex;gap:18px;align-items:center}
+    nav a{color:var(--muted);font-weight:650}
+    nav a.active{color:var(--accent);text-decoration:underline;text-underline-offset:8px;text-decoration-thickness:2px}
     .hamburger{display:none;border:1px solid var(--line);background:#fff;border-radius:10px;padding:8px 10px;font-weight:800}
 
-    .avatar{width:160px;height:160px;border-radius:999px;object-fit:cover;display:block;margin:6px auto 12px;background:#e5e7eb;border:6px solid #fff;box-shadow:0 10px 25px rgba(17,24,39,.08)}
+    /* Sidebar (no boxy cards) */
+    .avatar{width:160px;height:160px;border-radius:999px;object-fit:cover;display:block;margin:10px auto 12px;background:#e5e7eb;border:6px solid #fff;box-shadow:0 10px 25px rgba(17,24,39,.08)}
     .name{text-align:center;font-size:22px;font-weight:950;margin:0}
-    .tagline{text-align:center;color:var(--muted);margin:6px 0 14px;font-weight:600}
-    .pillrow{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:16px}
+    .tagline{text-align:center;color:var(--muted);margin:6px 0 10px;font-weight:600}
+    .pillrow{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:10px 0 12px}
     .pill{font-size:12px;font-weight:800;color:#0b2a6f;background:#eef2ff;border:1px solid #dbe3ff;padding:6px 10px;border-radius:999px}
 
-    .side-links{display:grid;gap:10px}
-    .side-link{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:12px;border:1px solid var(--line);color:var(--text)}
-    .icon{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:#f3f4f6;font-weight:900}
+    .side-meta{margin:14px 0 10px;color:var(--muted);font-size:14px;text-align:center}
+    .side-links{list-style:none;padding:0;margin:12px 0 0}
+    .side-links li{margin:8px 0}
+    .side-links a{color:var(--text)}
+    .side-links a:hover{color:var(--accent)}
 
+    /* Content */
     .wrap{max-width:var(--max);margin:0 auto;padding:26px 18px 52px}
-    .greet{font-size:26px;font-weight:950;margin:8px 0 10px}
-    .lead{margin:0 0 12px;font-size:16.5px}
+    .greet{font-size:34px;font-weight:950;margin:10px 0 10px}
+    .lead{margin:0 0 12px;font-size:16.5px;color:#1f2937}
     .muted{color:var(--muted)}
 
-    .section{margin-top:20px;padding-top:14px;border-top:1px solid var(--line)}
-    .mini-list{margin:8px 0 0;padding-left:18px}
-    .mini-list li{margin:6px 0}
+    .section{margin-top:22px;padding-top:16px;border-top:1px solid var(--line)}
+    .mini-list{margin:10px 0 0;padding-left:18px}
+    .mini-list li{margin:7px 0}
 
     .footer{margin-top:26px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:13px;text-align:center}
 
@@ -49,8 +55,9 @@
       aside{width:auto;height:auto;border-right:none;border-bottom:1px solid var(--line)}
       nav{display:none}
       .hamburger{display:inline-block}
-      nav.open{display:flex;flex-direction:column}
+      nav.open{display:flex;flex-direction:column;gap:10px;align-items:flex-start;padding-top:10px}
       .avatar{width:140px;height:140px}
+      .greet{font-size:28px}
     }
   </style>
 </head>
@@ -58,29 +65,49 @@
 <body>
 <div class="layout">
 
-  <!-- SIDEBAR -->
-  <aside>
-    <img class="avatar" src="assets/profile.jpg" alt="Zarin Tasnim Roichi"/>
-    <h1 class="name">Zarin Tasnim Roichi</h1>
-    <div class="tagline">Applied ML • NLP • LLMs</div>
+<aside>
+  <img class="avatar" src="assets/profile.jpg" alt="Zarin Tasnim Roichi"/>
 
-    <div class="pillrow">
-      <span class="pill">Python</span>
-      <span class="pill">Transformers</span>
-      <span class="pill">LLMs</span>
-      <span class="pill">SQL</span>
-    </div>
+  <h1 class="name">Zarin Tasnim Roichi</h1>
+  <div class="tagline">Applied ML • NLP • LLMs</div>
 
-    <div class="side-links">
-      <a class="side-link" href="mailto:zarinroichi@gmail.com"><div class="icon">✉</div><div>Email</div></a>
-      <a class="side-link" href="https://github.com/ZarinRoichi" target="_blank"><div class="icon">GH</div><div>GitHub</div></a>
-      <a class="side-link" href="resume/Zarin_Tasnim_Roichi_CV.pdf" target="_blank"><div class="icon">CV</div><div>Resume</div></a>
-    </div>
+  <div class="pillrow">
+    <span class="pill">Python</span>
+    <span class="pill">Transformers</span>
+    <span class="pill">SQL</span>
+    <span class="pill">Backend</span>
+  </div>
 
-    <p class="muted" style="margin:16px 6px 0;font-size:13px">
-      CSE graduate (AUST) • Open to research & ML roles
-    </p>
-  </aside>
+  <div class="side-meta">Dhaka, Bangladesh</div>
+
+  <!-- Academic-style links (NO BOXES) -->
+  <ul class="side-links">
+    <li><a href="mailto:zarinroichi@gmail.com">Email</a></li>
+    <li>
+      <a href="https://www.linkedin.com/in/zarin-tasnim-roichi/" 
+         target="_blank" rel="noreferrer">
+        LinkedIn
+      </a>
+    </li>
+    <li>
+      <a href="https://github.com/ZarinRoichi" 
+         target="_blank" rel="noreferrer">
+        GitHub
+      </a>
+    </li>
+    <li>
+      <a href="resume/Zarin_Tasnim_Roichi_CV.pdf" 
+         target="_blank" rel="noreferrer">
+        CV (PDF)
+      </a>
+    </li>
+  </ul>
+
+  <p class="muted" style="margin:16px 0 0;font-size:13px;text-align:center">
+    CSE graduate (AUST) • Open to research & ML roles
+  </p>
+</aside>
+
 
   <!-- MAIN -->
   <main>
@@ -99,16 +126,31 @@
     </div>
 
     <div class="wrap">
-      <div class="greet">Hi 👋</div>
+      <div class="greet">Greetings! 👽</div>
 
       <p class="lead">
-        I’m <b>Zarin Tasnim Roichi</b>, a Computer Science graduate from <b>Ahsanullah University of Science & Technology (AUST)</b>.
-        My work focuses on applied machine learning, particularly <b>Bengali NLP</b> and <b>transformer-based models</b>.
+        I am <b>Zarin Tasnim Roichi</b>, a Computer Science graduate from
+        <b>Ahsanullah University of Science &amp; Technology (AUST)</b>.
+        My interests lie in <b>applied machine learning</b> and <b>natural language processing</b>,
+        with a focus on <b>Bengali NLP</b> and transformer-based modeling.
       </p>
 
       <p class="lead">
-        I have experience building and evaluating NLP systems for <b>fake review/news detection</b> and <b>sentiment analysis</b>,
-        with attention to dataset balancing, error analysis, and practical deployment using Python APIs and SQL-backed systems.
+        I have hands-on experience building and evaluating NLP systems for <b>fake review</b> and <b>fake news detection</b>,
+        as well as <b>sentiment analysis</b>. My work emphasizes dataset preparation, handling class imbalance,
+        error analysis, and reliable evaluation—alongside practical deployment using Python-based APIs.
+      </p>
+
+      <p class="lead">
+        In addition to ML research-oriented work, I also have a strong <b>software development background</b>.
+        I have built SQL-backed web applications and backend systems (role-based access, dashboards, CRUD workflows),
+        focusing on clean data handling, structured information flow, and maintainable backend logic.
+      </p>
+
+      <p class="lead">
+        Recently, I have been exploring <b>multimodal learning</b> (text + image) for misinformation detection,
+        and I am interested in developing robust and trustworthy ML pipelines that work well in low-resource settings.
+        My long-term goal is to contribute to impactful research in academia or leading AI research labs.
       </p>
 
       <div class="section">
@@ -118,6 +160,15 @@
           <li>Multimodal learning and vision–language models</li>
           <li>NLP for low-resource languages and social good</li>
           <li>Trustworthy and reliable ML evaluation</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h3 style="margin:0 0 6px;">Software & Systems Background</h3>
+        <ul class="mini-list">
+          <li>Backend development with SQL-backed systems and structured data workflows</li>
+          <li>Building APIs for model inference and integrating ML into web applications</li>
+          <li>Deployment-oriented development with consistent preprocessing and reproducible pipelines</li>
         </ul>
       </div>
 
