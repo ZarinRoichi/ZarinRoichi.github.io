@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Zarin Tasnim Roichi | Portfolio</title>
+  <title>Zarin Tasnim Roichi | Home</title>
 
   <style>
     :root{
@@ -13,7 +13,6 @@
       --muted:#6b7280;
       --line:#e5e7eb;
       --accent:#2563eb;
-      --accent2:#0ea5e9;
       --shadow: 0 10px 24px rgba(17,24,39,.08);
       --radius: 18px;
       --sidebar: 320px;
@@ -24,64 +23,35 @@
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
       background:var(--bg);
       color:var(--text);
-      line-height:1.6;
+      line-height:1.75;
     }
-
-    /* Layout */
-    .layout{
-      display:flex;
-      min-height:100vh;
-    }
+    .layout{display:flex; min-height:100vh;}
     aside{
       width:var(--sidebar);
       padding:28px 22px;
       border-right:1px solid var(--line);
       background:linear-gradient(180deg,#ffffff, #fbfbff);
-      position:sticky;
-      top:0;
-      height:100vh;
-      overflow:auto;
+      position:sticky; top:0; height:100vh; overflow:auto;
     }
-    main{
-      flex:1;
-      padding:0;
-      min-width:0;
-    }
+    main{flex:1; min-width:0;}
 
     /* Top nav */
     .topbar{
-      position:sticky;
-      top:0;
-      z-index:10;
+      position:sticky; top:0; z-index:10;
       background:rgba(246,247,251,.9);
       backdrop-filter: blur(10px);
       border-bottom:1px solid var(--line);
     }
     .topbar-inner{
-      max-width:1100px;
-      margin:0 auto;
+      max-width:1100px; margin:0 auto;
       padding:14px 18px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
     }
-    .brand{
-      font-weight:800;
-      letter-spacing:.2px;
-    }
-    nav{
-      display:flex;
-      gap:14px;
-      flex-wrap:wrap;
-      justify-content:flex-end;
-    }
+    .brand{font-weight:900; letter-spacing:.2px;}
+    nav{display:flex; gap:14px; flex-wrap:wrap; justify-content:flex-end;}
     nav a{
-      color:var(--muted);
-      text-decoration:none;
-      font-weight:600;
-      padding:8px 10px;
-      border-radius:10px;
+      color:var(--muted); text-decoration:none; font-weight:700;
+      padding:8px 10px; border-radius:10px;
     }
     nav a:hover, nav a.active{
       color:var(--accent);
@@ -94,13 +64,12 @@
       border-radius:12px;
       padding:8px 10px;
       cursor:pointer;
-      font-weight:700;
+      font-weight:800;
     }
 
     /* Sidebar */
     .avatar{
-      width:170px;
-      height:170px;
+      width:170px; height:170px;
       border-radius:999px;
       object-fit:cover;
       border:8px solid #fff;
@@ -122,9 +91,7 @@
       font-weight:600;
     }
     .pillrow{
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
+      display:flex; flex-wrap:wrap; gap:8px;
       justify-content:center;
       margin:10px 0 18px;
     }
@@ -135,7 +102,7 @@
       border:1px solid #d7e7ff;
       padding:6px 10px;
       border-radius:999px;
-      font-weight:700;
+      font-weight:800;
     }
     .side-links{
       margin-top:14px;
@@ -172,135 +139,28 @@
       margin:0 auto;
       padding:24px 18px 40px;
     }
-    section{
-      margin:22px 0;
+    .card{
       background:var(--card);
       border:1px solid var(--line);
       border-radius:var(--radius);
       box-shadow: var(--shadow);
-      overflow:hidden;
+      padding:22px 20px;
     }
-    .sec-head{
-      padding:18px 18px 10px;
-      border-bottom:1px solid var(--line);
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-    }
-    .sec-head h2{
-      margin:0;
-      font-size:18px;
+    .title{
+      margin:0 0 10px;
+      font-size:22px;
+      font-weight:900;
       letter-spacing:.2px;
     }
-    .sec-body{
-      padding:16px 18px 18px;
-    }
     .muted{color:var(--muted)}
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:8px;
-      padding:10px 12px;
-      border-radius:12px;
-      border:1px solid #cfe2ff;
-      background:#eaf2ff;
-      color:var(--accent);
-      text-decoration:none;
-      font-weight:800;
-      cursor:pointer;
-    }
-    .btn:hover{filter:brightness(.98)}
-    .btn2{
-      border:1px solid var(--line);
-      background:#fff;
-      color:var(--text);
-    }
-
-    /* Cards */
-    .grid{
-      display:grid;
-      gap:14px;
-    }
-    .grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}
-    .grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
-    .card{
-      border:1px solid var(--line);
-      border-radius:16px;
-      overflow:hidden;
-      background:#fff;
-    }
-    /* Replace image thumbnails with clean placeholders */
-    .thumbbox{
-      width:100%;
-      height:140px;
-      background:linear-gradient(135deg,#eef2ff,#f8fafc);
-      border-bottom:1px solid var(--line);
-      display:flex;
-      align-items:center;
-      justify-content:center;
+    a{color:var(--accent)}
+    .footer{
+      text-align:center;
       color:var(--muted);
-      font-weight:900;
-      letter-spacing:.4px;
-    }
-    .card-body{
-      padding:12px 12px 14px;
-    }
-    .card-title{
-      margin:0 0 6px;
-      font-weight:900;
-      font-size:15px;
-    }
-    .card-text{
-      margin:0 0 10px;
-      color:var(--muted);
-      font-size:13.5px;
-    }
-    .meta{
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-      margin-bottom:10px;
-    }
-    .tag{
-      font-size:12px;
-      padding:5px 9px;
-      border-radius:999px;
-      background:#f3f4f6;
-      border:1px solid #eceff3;
-      color:#374151;
-      font-weight:700;
-    }
-    .actions{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
+      margin-top:18px;
+      font-size:13px;
     }
 
-    /* Lists */
-    ul.clean{
-      margin:0;
-      padding-left:18px;
-    }
-    ul.clean li{margin:6px 0}
-    .kvs{
-      display:grid;
-      gap:10px;
-    }
-    .kv{
-      display:flex;
-      gap:12px;
-      align-items:flex-start;
-      padding:12px;
-      border:1px solid var(--line);
-      border-radius:16px;
-      background:#fff;
-    }
-    .kv b{display:block}
-    .kv span{color:var(--muted)}
-
-    /* Mobile */
     @media (max-width: 980px){
       .layout{flex-direction:column}
       aside{
@@ -310,12 +170,9 @@
         border-right:none;
         border-bottom:1px solid var(--line);
       }
-      .topbar-inner{padding:12px 14px}
       nav{display:none}
       .hamburger{display:inline-block}
       nav.open{display:flex; flex-direction:column; align-items:flex-start; width:100%}
-      .grid.two{grid-template-columns:1fr}
-      .grid.three{grid-template-columns:1fr}
       .avatar{width:140px;height:140px}
     }
   </style>
@@ -329,7 +186,7 @@
       <img class="avatar" src="assets/profile.jpg" alt="Zarin Tasnim Roichi" />
 
       <h1 class="name">Zarin Tasnim Roichi</h1>
-      <div class="tagline">ML / NLP • LLMs • Backend • IoT</div>
+      <div class="tagline">Applied ML/NLP • LLMs • Backend • IoT</div>
 
       <div class="pillrow">
         <span class="pill">Python</span>
@@ -341,40 +198,27 @@
       <div class="side-links">
         <a class="side-link" href="mailto:zarinroichi@gmail.com">
           <div class="icon">✉</div>
-          <div>
-            <b>Email</b>
-            <small>zarinroichi@gmail.com</small>
-          </div>
+          <div><b>Email</b><small>zarinroichi@gmail.com</small></div>
         </a>
 
         <a class="side-link" href="https://github.com/ZarinRoichi" target="_blank" rel="noreferrer">
           <div class="icon">GH</div>
-          <div>
-            <b>GitHub</b>
-            <small>github.com/ZarinRoichi</small>
-          </div>
+          <div><b>GitHub</b><small>github.com/ZarinRoichi</small></div>
         </a>
 
         <a class="side-link" href="https://linkedin.com/in/zarin-tasnim-roichi" target="_blank" rel="noreferrer">
           <div class="icon">in</div>
-          <div>
-            <b>LinkedIn</b>
-            <small>zarin-tasnim-roichi</small>
-          </div>
+          <div><b>LinkedIn</b><small>zarin-tasnim-roichi</small></div>
         </a>
 
         <a class="side-link" href="resume/Zarin_Tasnim_Roichi_CV.pdf" target="_blank" rel="noreferrer">
           <div class="icon">CV</div>
-          <div>
-            <b>Resume</b>
-            <small>Download PDF</small>
-          </div>
+          <div><b>Resume</b><small>Download PDF</small></div>
         </a>
       </div>
 
       <p class="muted" style="margin:18px 6px 0; font-size:13px;">
-        Fresh graduate focusing on applied ML/NLP (Transformers &amp; LLMs) and backend integration.  
-        Open to internships / entry-level roles.
+        Fresh graduate (CSE, AUST). Open to internships / entry-level roles.
       </p>
     </aside>
 
@@ -384,389 +228,58 @@
       <!-- TOP NAV -->
       <div class="topbar">
         <div class="topbar-inner">
-          <div class="brand">Portfolio</div>
+          <div class="brand">ZarinRoichi</div>
 
           <button class="hamburger" id="menuBtn">☰ Menu</button>
 
           <nav id="nav">
-            <a href="#home" class="active">Home</a>
-            <a href="#projects">Projects</a>
-            <a href="#research">Research</a>
-            <a href="#education">Education</a>
-            <a href="#skills">Skills</a>
-            <a href="#contact">Contact</a>
+            <a href="index.html" class="active">Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="research.html">Research</a>
+            <a href="education.html">Education</a>
+            <a href="cv.html">CV</a>
           </nav>
         </div>
       </div>
 
       <div class="wrap">
+        <div class="card">
+          <h2 class="title">Greetings! 👋</h2>
 
-        <!-- HOME / ABOUT -->
-        <section id="home">
-          <div class="sec-head">
-            <h2>Home</h2>
-            <div class="actions">
-              <a class="btn" href="resume/Zarin_Tasnim_Roichi_CV.pdf" target="_blank" rel="noreferrer">Download CV</a>
-              <a class="btn btn2" href="https://github.com/ZarinRoichi" target="_blank" rel="noreferrer">GitHub</a>
-            </div>
-          </div>
-          <div class="sec-body">
-            <p>
-              I am a Computer Science graduate with hands-on experience in <b>backend development</b> and
-              <b>applied machine learning</b>. I enjoy building end-to-end systems where
-              <b>transformer-based models</b> and <b>LLM-oriented workflows</b> are trained, evaluated,
-              and integrated into real web applications.
-            </p>
+          <p>
+            I am <b>Zarin Tasnim Roichi</b>, a Computer Science graduate from Ahsanullah University of Science and Technology (AUST).
+            My interests are in <b>Machine Learning</b>, <b>Natural Language Processing (NLP)</b>, and <b>backend development</b>.
+          </p>
 
-            <div class="grid two" style="margin-top:14px;">
-              <div class="kv">
-                <div class="icon" style="background:#e8fff7;color:#047857;">✓</div>
-                <div>
-                  <b>What I build</b>
-                  <span>ML-powered web apps, Bengali NLP pipelines, SQL-backed systems, and IoT automation.</span>
-                </div>
-              </div>
-              <div class="kv">
-                <div class="icon" style="background:#fff7ed;color:#9a3412;">★</div>
-                <div>
-                  <b>Focus</b>
-                  <span>Misinformation detection, sentiment analysis, multimodal learning (text+image), deployment.</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+          <p>
+            I work on applied Bengali NLP problems such as <b>fake review detection</b>, <b>fake news detection</b>, and
+            <b>sentiment analysis</b> using transformer-based models and LLM-oriented workflows (fine-tuning, evaluation, and deployment).
+            I also explore <b>multimodal learning</b> (text + image) and enjoy integrating ML models into real systems through <b>Python APIs</b>
+            and <b>SQL-backed web applications</b>.
+          </p>
 
-        <!-- PROJECTS -->
-        <section id="projects">
-          <div class="sec-head">
-            <h2>Projects</h2>
-            <span class="muted">Selected work (ML + Software + IoT)</span>
-          </div>
+          <p>
+            Alongside ML/NLP, I have built software systems like attendance/leave management applications, and I also completed an
+            offline <b>IoT home automation</b> project using Arduino with an Android voice-control app.
+          </p>
 
-          <div class="sec-body">
-            <h3 style="margin:0 0 10px;">Machine Learning &amp; AI</h3>
-            <div class="grid two">
-
-              <div class="card">
-                <div class="thumbbox">NLP • Transformers</div>
-                <div class="card-body">
-                  <p class="card-title">Bengali Fake Review Detection</p>
-                  <p class="card-text">Transformer-based Bengali text classification with balancing + error analysis (best ~98% F1).</p>
-                  <div class="meta">
-                    <span class="tag">NLP</span><span class="tag">Transformers</span><span class="tag">Bangla</span>
-                  </div>
-                  <div class="actions">
-                    <a class="btn" href="https://github.com/ZarinRoichi?tab=repositories&q=fake+review" target="_blank" rel="noreferrer">GitHub (Repo/Search)</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="card">
-                <div class="thumbbox">LoRA/PEFT</div>
-                <div class="card-body">
-                  <p class="card-title">Sentiment Analysis (Bengali Movie Reviews)</p>
-                  <p class="card-text">Binary sentiment classification; fine-tuning with LoRA/PEFT and evaluation pipeline (~97% accuracy).</p>
-                  <div class="meta">
-                    <span class="tag">LoRA/PEFT</span><span class="tag">Transformers</span><span class="tag">Evaluation</span>
-                  </div>
-                  <div class="actions">
-                    <a class="btn" href="https://github.com/ZarinRoichi?tab=repositories&q=sentiment" target="_blank" rel="noreferrer">GitHub (Repo/Search)</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="card">
-                <div class="thumbbox">Text + Image</div>
-                <div class="card-body">
-                  <p class="card-title">Multimodal Fake News Detection</p>
-                  <p class="card-text">Text + image pipeline using late fusion / ensemble to compare unimodal vs multimodal performance.</p>
-                  <div class="meta">
-                    <span class="tag">Multimodal</span><span class="tag">Fusion</span><span class="tag">ViT/CNN</span>
-                  </div>
-                  <div class="actions">
-                    <a class="btn" href="https://github.com/ZarinRoichi?tab=repositories&q=multimodal" target="_blank" rel="noreferrer">GitHub (Repo/Search)</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="card">
-                <div class="thumbbox">Audio + Text</div>
-                <div class="card-body">
-                  <p class="card-title">SOS Dataset (Ongoing)</p>
-                  <p class="card-text">Preparing audio + text dataset for emergency vs non-emergency classification: labeling + preprocessing.</p>
-                  <div class="meta">
-                    <span class="tag">Dataset</span><span class="tag">Labeling</span><span class="tag">Quality</span>
-                  </div>
-                  <div class="actions">
-                    <a class="btn" href="https://github.com/ZarinRoichi?tab=repositories&q=sos" target="_blank" rel="noreferrer">GitHub (Repo/Search)</a>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-            <hr style="border:none;border-top:1px solid var(--line); margin:18px 0;">
-
-            <h3 style="margin:0 0 10px;">Software Development</h3>
-            <div class="grid two">
-
-              <div class="card">
-                <div class="thumbbox">Web • SQL</div>
-                <div class="card-body">
-                  <p class="card-title">Employee Time &amp; Attendance Tracker</p>
-                  <p class="card-text">Role-based web system: attendance, leave workflow, dashboards, authentication; SQL-backed.</p>
-                  <div class="meta">
-                    <span class="tag">PHP</span><span class="tag">MySQL/SQL Server</span><span class="tag">Localhost</span>
-                  </div>
-                  <div class="actions">
-                    <a class="btn" href="https://github.com/afrainakhter/TimeVista2.0" target="_blank" rel="noreferrer">GitHub Repo</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="card">
-                <div class="thumbbox">Android / App</div>
-                <div class="card-body">
-                  <p class="card-title">AUST Connect</p>
-                  <p class="card-text">University-only social platform: posts, notifications, chat; backend logic + access control.</p>
-                  <div class="meta">
-                    <span class="tag">App</span><span class="tag">Backend</span><span class="tag">DB</span>
-                  </div>
-                  <div class="actions">
-                    <a class="btn" href="https://github.com/afrainakhter/AustConnect" target="_blank" rel="noreferrer">GitHub Repo</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="card">
-                <div class="thumbbox">ASP.NET • SQL</div>
-                <div class="card-body">
-                  <p class="card-title">TimeVista Website</p>
-                  <p class="card-text">Backend-driven website with database connectivity and structured information flow.</p>
-                  <div class="meta">
-                    <span class="tag">ASP.NET MVC</span><span class="tag">SQL</span><span class="tag">Web</span>
-                  </div>
-                  <div class="actions">
-                    <a class="btn" href="https://github.com/afrainakhter/TimeVista2.0" target="_blank" rel="noreferrer">GitHub Repo</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="card">
-                <div class="thumbbox">Java • SQL</div>
-                <div class="card-body">
-                  <p class="card-title">Bus Ticket Management System</p>
-                  <p class="card-text">SQL-based backend system for ticket booking and management; CRUD + validations.</p>
-                  <div class="meta">
-                    <span class="tag">Java</span><span class="tag">SQL</span><span class="tag">Backend</span>
-                  </div>
-                  <div class="actions">
-                    <a class="btn" href="https://github.com/afrainakhter/BusTicket" target="_blank" rel="noreferrer">GitHub Repo</a>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-            <hr style="border:none;border-top:1px solid var(--line); margin:18px 0;">
-
-            <h3 style="margin:0 0 10px;">Hardware &amp; IoT</h3>
-            <div class="grid two">
-              <div class="card">
-                <div class="thumbbox">Arduino • Bluetooth</div>
-                <div class="card-body">
-                  <p class="card-title">Offline Voice-Controlled Home Automation</p>
-                  <p class="card-text">Arduino Uno/Nano + Bluetooth; MIT App Inventor Android app; RFID security; command mapping (exact-match vs fallback) + error handling.</p>
-                  <div class="meta">
-                    <span class="tag">Arduino</span><span class="tag">MIT App Inventor</span><span class="tag">RFID</span>
-                  </div>
-                  <div class="actions">
-                    <a class="btn" href="https://github.com/ZarinRoichi?tab=repositories&q=home+automation" target="_blank" rel="noreferrer">GitHub (Repo/Search)</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="card">
-                <div class="thumbbox">Computer Graphics</div>
-                <div class="card-body">
-                  <p class="card-title">DX Ball–Style Game (Computer Graphics)</p>
-                  <p class="card-text">Implemented graphics programs and a DX Ball–style game using graphics libraries (Visual Studio 2016).</p>
-                  <div class="meta">
-                    <span class="tag">C/C++</span><span class="tag">Visual Studio</span><span class="tag">Graphics</span>
-                  </div>
-                  <div class="actions">
-                    <a class="btn" href="https://github.com/ZarinRoichi?tab=repositories&q=dx+ball" target="_blank" rel="noreferrer">GitHub (Repo/Search)</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </section>
-
-        <!-- RESEARCH -->
-        <section id="research">
-          <div class="sec-head">
-            <h2>Research</h2>
-            <span class="muted">Short & fresh-graduate friendly</span>
-          </div>
-          <div class="sec-body">
-            <p class="muted" style="margin-top:0;">
-              I work on applied Bengali NLP and misinformation detection, focusing on transformers and LLM-oriented workflows,
-              along with practical evaluation and deployment.
-            </p>
-            <div class="grid two">
-              <div class="kv">
-                <div class="icon">1</div>
-                <div>
-                  <b>Misinformation & Fake Review/News Detection</b>
-                  <span>Transformer-based Bengali text classification with balancing, augmentation, and error analysis.</span>
-                </div>
-              </div>
-              <div class="kv">
-                <div class="icon">2</div>
-                <div>
-                  <b>Multimodal Learning</b>
-                  <span>Text+image fusion and comparison to unimodal baselines for fake news detection.</span>
-                </div>
-              </div>
-              <div class="kv">
-                <div class="icon">3</div>
-                <div>
-                  <b>Dataset Preparation</b>
-                  <span>Building SOS dataset (audio+text): labeling, preprocessing, and quality control.</span>
-                </div>
-              </div>
-              <div class="kv">
-                <div class="icon">4</div>
-                <div>
-                  <b>Deployment-Oriented ML</b>
-                  <span>Python APIs for inference + web integration, confidence-based handling.</span>
-                </div>
-              </div>
-            </div>
-
-            <div style="margin-top:14px; padding:12px; border:1px dashed var(--line); border-radius:16px;">
-              <b>Publications</b>
-              <div class="muted">Currently none (portfolio will be updated as work gets published).</div>
-            </div>
-          </div>
-        </section>
-
-        <!-- EDUCATION -->
-        <section id="education">
-          <div class="sec-head">
-            <h2>Education</h2>
-            <span class="muted">Updated information</span>
-          </div>
-          <div class="sec-body">
-            <div class="kvs">
-              <div class="kv">
-                <div class="icon" style="background:#eaf2ff;color:var(--accent);">🎓</div>
-                <div>
-                  <b>B.Sc. in Computer Science & Engineering — AUST</b>
-                  <span>Completed: December 2025 • CGPA: 3.405 / 4.00</span>
-                </div>
-              </div>
-              <div class="kv">
-                <div class="icon" style="background:#fef9c3;color:#854d0e;">HSC</div>
-                <div>
-                  <b>Holy Cross College, Dhaka</b>
-                  <span>2019 • GPA: 5.00 / 5.00</span>
-                </div>
-              </div>
-              <div class="kv">
-                <div class="icon" style="background:#dcfce7;color:#166534;">SSC</div>
-                <div>
-                  <b>A.V.J.M Govt. Girls High School</b>
-                  <span>2017 • GPA: 5.00 / 5.00</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- SKILLS -->
-        <section id="skills">
-          <div class="sec-head">
-            <h2>Skills</h2>
-            <span class="muted">Grouped for readability</span>
-          </div>
-          <div class="sec-body">
-            <div class="grid two">
-              <div class="kv">
-                <div class="icon">🧠</div>
-                <div>
-                  <b>ML / AI</b>
-                  <span>Transformers, LLMs, Bengali NLP, LoRA/PEFT, multimodal (text+image), evaluation & error analysis.</span>
-                </div>
-              </div>
-              <div class="kv">
-                <div class="icon">⚙</div>
-                <div>
-                  <b>Backend & Databases</b>
-                  <span>Python APIs, SQL-based web apps, MySQL, SQL Server, localhost deployment.</span>
-                </div>
-              </div>
-              <div class="kv">
-                <div class="icon">💻</div>
-                <div>
-                  <b>Programming</b>
-                  <span>Python, C, C++, Java, JavaScript, PHP, HTML, CSS, Assembly, LaTeX.</span>
-                </div>
-              </div>
-              <div class="kv">
-                <div class="icon">🧰</div>
-                <div>
-                  <b>Tools</b>
-                  <span>PyTorch, TensorFlow, Hugging Face, Scikit-learn, Git/GitHub, VS Code, Visual Studio, XAMPP, MATLAB, Arduino IDE, Android Studio, Cisco Packet Tracer, WEKA.</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- CONTACT -->
-        <section id="contact">
-          <div class="sec-head">
-            <h2>Contact</h2>
-            <span class="muted">Let’s connect</span>
-          </div>
-          <div class="sec-body">
-            <ul class="clean">
-              <li><b>Email:</b> <a href="mailto:zarinroichi@gmail.com">zarinroichi@gmail.com</a></li>
-              <li><b>GitHub:</b> <a href="https://github.com/ZarinRoichi" target="_blank" rel="noreferrer">github.com/ZarinRoichi</a></li>
-              <li><b>LinkedIn:</b> <a href="https://linkedin.com/in/zarin-tasnim-roichi" target="_blank" rel="noreferrer">linkedin.com/in/zarin-tasnim-roichi</a></li>
-            </ul>
-            <p class="muted" style="margin:12px 0 0;">Last updated: 2026</p>
-          </div>
-        </section>
-
-        <div class="muted" style="text-align:center; margin:18px 0 0; font-size:13px;">
-          © <span id="year"></span> Zarin Tasnim Roichi • Built with GitHub Pages
+          <p class="muted" style="margin-bottom:0;">
+            Use the navigation bar to view my projects, research interests, education, and CV.
+          </p>
         </div>
 
+        <div class="footer">
+          © <span id="year"></span> Zarin Tasnim Roichi • Built with GitHub Pages
+        </div>
       </div>
     </main>
   </div>
 
   <script>
-    // year
     document.getElementById("year").textContent = new Date().getFullYear();
-
-    // mobile nav
     const btn = document.getElementById("menuBtn");
     const nav = document.getElementById("nav");
     btn?.addEventListener("click", () => nav.classList.toggle("open"));
-
-    // active link on click
-    document.querySelectorAll("nav a").forEach(a=>{
-      a.addEventListener("click", ()=>{
-        document.querySelectorAll("nav a").forEach(x=>x.classList.remove("active"));
-        a.classList.add("active");
-      });
-    });
   </script>
 </body>
 </html>
