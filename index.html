@@ -13,7 +13,17 @@
     a:hover{text-decoration:underline}
 
     .layout{display:flex;min-height:100vh}
-    aside{width:var(--sidebar);padding:26px 22px;border-right:1px solid var(--line);position:sticky;top:0;height:100vh;overflow:auto;background:#fff}
+    aside{
+  width:var(--sidebar);
+  padding:26px 22px;
+  border-right:none;   /* 👈 line gone */
+  position:sticky;
+  top:0;
+  height:100vh;
+  overflow:auto;
+  background:#fff;
+}
+
     main{flex:1;min-width:0}
 
     /* Top (simple like academic pages) */
