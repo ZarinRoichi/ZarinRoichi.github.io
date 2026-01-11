@@ -8,10 +8,11 @@
   <style>
     :root{
       --bg:#fff;--text:#111827;--muted:#6b7280;--line:#e5e7eb;
-      --accent:#2563eb;
-      --purple:#7c3aed; /* ✅ added */
+      --accent:#2563eb;   /* BLUE */
+      --purple:#7c3aed;   /* PURPLE */
       --sidebar:320px;--max:1060px
     }
+
     *{box-sizing:border-box}
     body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;line-height:1.8;background:var(--bg);color:var(--text)}
     a{color:var(--accent);text-decoration:none}
@@ -30,7 +31,7 @@
     nav a.active{color:var(--accent);text-decoration:underline;text-underline-offset:8px;text-decoration-thickness:2px}
     .hamburger{display:none;border:1px solid var(--line);background:#fff;border-radius:10px;padding:8px 10px;font-weight:800}
 
-    /* Sidebar (index-like, no boxes) */
+    /* Sidebar */
     .avatar{width:160px;height:160px;border-radius:999px;object-fit:cover;display:block;margin:10px auto 12px;background:#e5e7eb;border:6px solid #fff;box-shadow:0 10px 25px rgba(17,24,39,.08)}
     .name{text-align:center;font-size:22px;font-weight:900;margin:0}
     .tagline{text-align:center;color:#374151;margin:6px 0 4px;font-weight:650}
@@ -42,14 +43,13 @@
     .c-ico{width:18px;height:18px;color:var(--muted)}
     .contact-item a{font-size:14px;font-weight:650;color:var(--text);text-decoration:none}
     .contact-item a:hover{color:var(--accent);text-decoration:underline}
-
     .status{margin-top:14px;font-size:13px;color:var(--muted);text-align:center}
 
     /* Content */
     .wrap{max-width:var(--max);margin:0 auto;padding:26px 18px 52px}
     .page-title{font-size:44px;letter-spacing:.2px;font-weight:950;margin:12px 0 14px;color:#111827}
 
-    /* Summary card (blue left strip) */
+    /* ✅ Summary card = PURPLE strip */
     .summary{
       background:#fff;
       border:1px solid var(--line);
@@ -64,12 +64,12 @@
       left:0;top:0;bottom:0;
       width:6px;
       border-radius:18px 0 0 18px;
-      background:var(--accent);
+      background:var(--purple); /* ✅ purple */
     }
     .summary p{margin:0;color:#374151;font-size:16px}
     .summary b{color:#111827}
 
-    /* Project cards (purple left strip ✅) */
+    /* ✅ Project cards = BLUE strip */
     .card{
       margin-top:18px;
       background:#fff;
@@ -77,7 +77,7 @@
       border-radius:18px;
       padding:18px 18px 16px;
       box-shadow:0 10px 25px rgba(17,24,39,.04);
-      position:relative; /* ✅ needed */
+      position:relative;
     }
     .card:before{
       content:"";
@@ -85,7 +85,7 @@
       left:0;top:0;bottom:0;
       width:6px;
       border-radius:18px 0 0 18px;
-      background:var(--purple); /* ✅ purple */
+      background:var(--accent); /* ✅ blue */
     }
 
     .card h3{margin:0 0 10px;font-size:26px;font-weight:950;color:#111827}
@@ -102,6 +102,7 @@
       border-radius:999px;
     }
 
+    /* ✅ button stays BLUE */
     .btn{
       display:inline-flex;
       align-items:center;
