@@ -231,12 +231,18 @@
       overflow:hidden;
       background:#fff;
     }
-    .thumb{
+    /* Replace image thumbnails with clean placeholders */
+    .thumbbox{
       width:100%;
-      height:170px;
-      object-fit:cover;
-      background:#e5e7eb;
-      display:block;
+      height:140px;
+      background:linear-gradient(135deg,#eef2ff,#f8fafc);
+      border-bottom:1px solid var(--line);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:var(--muted);
+      font-weight:900;
+      letter-spacing:.4px;
     }
     .card-body{
       padding:12px 12px 14px;
@@ -323,13 +329,13 @@
       <img class="avatar" src="assets/profile.jpg" alt="Zarin Tasnim Roichi" />
 
       <h1 class="name">Zarin Tasnim Roichi</h1>
-      <div class="tagline">ML / NLP • Backend • IoT Projects</div>
+      <div class="tagline">ML / NLP • LLMs • Backend • IoT</div>
 
       <div class="pillrow">
         <span class="pill">Python</span>
         <span class="pill">Transformers</span>
+        <span class="pill">LLMs</span>
         <span class="pill">SQL</span>
-        <span class="pill">Web Apps</span>
       </div>
 
       <div class="side-links">
@@ -367,7 +373,7 @@
       </div>
 
       <p class="muted" style="margin:18px 6px 0; font-size:13px;">
-        Fresh graduate focusing on applied ML/NLP and backend integration.  
+        Fresh graduate focusing on applied ML/NLP (Transformers &amp; LLMs) and backend integration.  
         Open to internships / entry-level roles.
       </p>
     </aside>
@@ -407,8 +413,9 @@
           <div class="sec-body">
             <p>
               I am a Computer Science graduate with hands-on experience in <b>backend development</b> and
-              <b>applied machine learning</b>. I enjoy building end-to-end systems where transformer-based
-              models are trained, evaluated, and integrated into real web applications.
+              <b>applied machine learning</b>. I enjoy building end-to-end systems where
+              <b>transformer-based models</b> and <b>LLM-oriented workflows</b> are trained, evaluated,
+              and integrated into real web applications.
             </p>
 
             <div class="grid two" style="margin-top:14px;">
@@ -416,14 +423,14 @@
                 <div class="icon" style="background:#e8fff7;color:#047857;">✓</div>
                 <div>
                   <b>What I build</b>
-                  <span>ML-powered web apps, NLP pipelines, SQL-backed systems, IoT automation.</span>
+                  <span>ML-powered web apps, Bengali NLP pipelines, SQL-backed systems, and IoT automation.</span>
                 </div>
               </div>
               <div class="kv">
                 <div class="icon" style="background:#fff7ed;color:#9a3412;">★</div>
                 <div>
                   <b>Focus</b>
-                  <span>Bengali NLP (fake review/news, sentiment), multimodal learning, deployment.</span>
+                  <span>Misinformation detection, sentiment analysis, multimodal learning (text+image), deployment.</span>
                 </div>
               </div>
             </div>
@@ -442,7 +449,7 @@
             <div class="grid two">
 
               <div class="card">
-                <img class="thumb" src="assets/projects/fake-review.png" alt="Bengali Fake Review Detection">
+                <div class="thumbbox">NLP • Transformers</div>
                 <div class="card-body">
                   <p class="card-title">Bengali Fake Review Detection</p>
                   <p class="card-text">Transformer-based Bengali text classification with balancing + error analysis (best ~98% F1).</p>
@@ -450,14 +457,13 @@
                     <span class="tag">NLP</span><span class="tag">Transformers</span><span class="tag">Bangla</span>
                   </div>
                   <div class="actions">
-                    <a class="btn" href="https://github.com/ZarinRoichi" target="_blank" rel="noreferrer">GitHub</a>
-                    <a class="btn btn2" href="#" onclick="alert('Add your report/demo link here'); return false;">Report/Demo</a>
+                    <a class="btn" href="https://github.com/ZarinRoichi?tab=repositories&q=fake+review" target="_blank" rel="noreferrer">GitHub (Repo/Search)</a>
                   </div>
                 </div>
               </div>
 
               <div class="card">
-                <img class="thumb" src="assets/projects/sentiment.png" alt="Sentiment Analysis of Bengali Movie Reviews">
+                <div class="thumbbox">LoRA/PEFT</div>
                 <div class="card-body">
                   <p class="card-title">Sentiment Analysis (Bengali Movie Reviews)</p>
                   <p class="card-text">Binary sentiment classification; fine-tuning with LoRA/PEFT and evaluation pipeline (~97% accuracy).</p>
@@ -465,38 +471,35 @@
                     <span class="tag">LoRA/PEFT</span><span class="tag">Transformers</span><span class="tag">Evaluation</span>
                   </div>
                   <div class="actions">
-                    <a class="btn" href="https://github.com/ZarinRoichi" target="_blank" rel="noreferrer">GitHub</a>
-                    <a class="btn btn2" href="#" onclick="alert('Add your report/demo link here'); return false;">Report/Demo</a>
+                    <a class="btn" href="https://github.com/ZarinRoichi?tab=repositories&q=sentiment" target="_blank" rel="noreferrer">GitHub (Repo/Search)</a>
                   </div>
                 </div>
               </div>
 
               <div class="card">
-                <img class="thumb" src="assets/projects/multimodal.png" alt="Multimodal Fake News Detection">
+                <div class="thumbbox">Text + Image</div>
                 <div class="card-body">
                   <p class="card-title">Multimodal Fake News Detection</p>
                   <p class="card-text">Text + image pipeline using late fusion / ensemble to compare unimodal vs multimodal performance.</p>
                   <div class="meta">
-                    <span class="tag">Multimodal</span><span class="tag">Text+Image</span><span class="tag">Fusion</span>
+                    <span class="tag">Multimodal</span><span class="tag">Fusion</span><span class="tag">ViT/CNN</span>
                   </div>
                   <div class="actions">
-                    <a class="btn" href="https://github.com/ZarinRoichi" target="_blank" rel="noreferrer">GitHub</a>
-                    <a class="btn btn2" href="#" onclick="alert('Add your report/demo link here'); return false;">Report/Demo</a>
+                    <a class="btn" href="https://github.com/ZarinRoichi?tab=repositories&q=multimodal" target="_blank" rel="noreferrer">GitHub (Repo/Search)</a>
                   </div>
                 </div>
               </div>
 
               <div class="card">
-                <img class="thumb" src="assets/projects/sos.png" alt="SOS Dataset">
+                <div class="thumbbox">Audio + Text</div>
                 <div class="card-body">
                   <p class="card-title">SOS Dataset (Ongoing)</p>
                   <p class="card-text">Preparing audio + text dataset for emergency vs non-emergency classification: labeling + preprocessing.</p>
                   <div class="meta">
-                    <span class="tag">Dataset</span><span class="tag">Audio+Text</span><span class="tag">Labeling</span>
+                    <span class="tag">Dataset</span><span class="tag">Labeling</span><span class="tag">Quality</span>
                   </div>
                   <div class="actions">
-                    <a class="btn" href="https://github.com/ZarinRoichi" target="_blank" rel="noreferrer">GitHub</a>
-                    <a class="btn btn2" href="#" onclick="alert('Add dataset page link here'); return false;">Details</a>
+                    <a class="btn" href="https://github.com/ZarinRoichi?tab=repositories&q=sos" target="_blank" rel="noreferrer">GitHub (Repo/Search)</a>
                   </div>
                 </div>
               </div>
@@ -509,22 +512,21 @@
             <div class="grid two">
 
               <div class="card">
-                <img class="thumb" src="assets/projects/attendance.png" alt="Employee Time & Attendance Tracker">
+                <div class="thumbbox">Web • SQL</div>
                 <div class="card-body">
-                  <p class="card-title">Employee Time & Attendance Tracker</p>
+                  <p class="card-title">Employee Time &amp; Attendance Tracker</p>
                   <p class="card-text">Role-based web system: attendance, leave workflow, dashboards, authentication; SQL-backed.</p>
                   <div class="meta">
-                    <span class="tag">PHP</span><span class="tag">MySQL/SQL Server</span><span class="tag">Web</span>
+                    <span class="tag">PHP</span><span class="tag">MySQL/SQL Server</span><span class="tag">Localhost</span>
                   </div>
                   <div class="actions">
-                    <a class="btn" href="https://github.com/ZarinRoichi" target="_blank" rel="noreferrer">GitHub</a>
-                    <a class="btn btn2" href="#" onclick="alert('Add screenshots/demo link here'); return false;">Demo</a>
+                    <a class="btn" href="https://github.com/afrainakhter/TimeVista2.0" target="_blank" rel="noreferrer">GitHub Repo</a>
                   </div>
                 </div>
               </div>
 
               <div class="card">
-                <img class="thumb" src="assets/projects/austconnect.png" alt="AUST Connect">
+                <div class="thumbbox">Android / App</div>
                 <div class="card-body">
                   <p class="card-title">AUST Connect</p>
                   <p class="card-text">University-only social platform: posts, notifications, chat; backend logic + access control.</p>
@@ -532,29 +534,27 @@
                     <span class="tag">App</span><span class="tag">Backend</span><span class="tag">DB</span>
                   </div>
                   <div class="actions">
-                    <a class="btn" href="https://github.com/ZarinRoichi" target="_blank" rel="noreferrer">GitHub</a>
-                    <a class="btn btn2" href="#" onclick="alert('Add repo link here'); return false;">Repo</a>
+                    <a class="btn" href="https://github.com/afrainakhter/AustConnect" target="_blank" rel="noreferrer">GitHub Repo</a>
                   </div>
                 </div>
               </div>
 
               <div class="card">
-                <img class="thumb" src="assets/projects/timevista.png" alt="TimeVista">
+                <div class="thumbbox">ASP.NET • SQL</div>
                 <div class="card-body">
                   <p class="card-title">TimeVista Website</p>
                   <p class="card-text">Backend-driven website with database connectivity and structured information flow.</p>
                   <div class="meta">
-                    <span class="tag">ASP.NET</span><span class="tag">SQL</span><span class="tag">Web</span>
+                    <span class="tag">ASP.NET MVC</span><span class="tag">SQL</span><span class="tag">Web</span>
                   </div>
                   <div class="actions">
-                    <a class="btn" href="https://github.com/ZarinRoichi" target="_blank" rel="noreferrer">GitHub</a>
-                    <a class="btn btn2" href="#" onclick="alert('Add repo link here'); return false;">Repo</a>
+                    <a class="btn" href="https://github.com/afrainakhter/TimeVista2.0" target="_blank" rel="noreferrer">GitHub Repo</a>
                   </div>
                 </div>
               </div>
 
               <div class="card">
-                <img class="thumb" src="assets/projects/busticket.png" alt="Bus Ticket Management System">
+                <div class="thumbbox">Java • SQL</div>
                 <div class="card-body">
                   <p class="card-title">Bus Ticket Management System</p>
                   <p class="card-text">SQL-based backend system for ticket booking and management; CRUD + validations.</p>
@@ -562,8 +562,7 @@
                     <span class="tag">Java</span><span class="tag">SQL</span><span class="tag">Backend</span>
                   </div>
                   <div class="actions">
-                    <a class="btn" href="https://github.com/ZarinRoichi" target="_blank" rel="noreferrer">GitHub</a>
-                    <a class="btn btn2" href="#" onclick="alert('Add repo link here'); return false;">Repo</a>
+                    <a class="btn" href="https://github.com/afrainakhter/BusTicket" target="_blank" rel="noreferrer">GitHub Repo</a>
                   </div>
                 </div>
               </div>
@@ -575,31 +574,29 @@
             <h3 style="margin:0 0 10px;">Hardware &amp; IoT</h3>
             <div class="grid two">
               <div class="card">
-                <img class="thumb" src="assets/projects/home-automation.png" alt="Offline Voice-Controlled Home Automation">
+                <div class="thumbbox">Arduino • Bluetooth</div>
                 <div class="card-body">
                   <p class="card-title">Offline Voice-Controlled Home Automation</p>
                   <p class="card-text">Arduino Uno/Nano + Bluetooth; MIT App Inventor Android app; RFID security; command mapping (exact-match vs fallback) + error handling.</p>
                   <div class="meta">
-                    <span class="tag">Arduino</span><span class="tag">MIT App Inventor</span><span class="tag">IoT</span>
+                    <span class="tag">Arduino</span><span class="tag">MIT App Inventor</span><span class="tag">RFID</span>
                   </div>
                   <div class="actions">
-                    <a class="btn" href="https://github.com/ZarinRoichi" target="_blank" rel="noreferrer">GitHub</a>
-                    <a class="btn btn2" href="#" onclick="alert('Add demo/report link here'); return false;">Details</a>
+                    <a class="btn" href="https://github.com/ZarinRoichi?tab=repositories&q=home+automation" target="_blank" rel="noreferrer">GitHub (Repo/Search)</a>
                   </div>
                 </div>
               </div>
 
               <div class="card">
-                <img class="thumb" src="assets/projects/dxball.png" alt="DX Ball style game">
+                <div class="thumbbox">Computer Graphics</div>
                 <div class="card-body">
                   <p class="card-title">DX Ball–Style Game (Computer Graphics)</p>
                   <p class="card-text">Implemented graphics programs and a DX Ball–style game using graphics libraries (Visual Studio 2016).</p>
                   <div class="meta">
-                    <span class="tag">Computer Graphics</span><span class="tag">C/C++</span><span class="tag">Visual Studio</span>
+                    <span class="tag">C/C++</span><span class="tag">Visual Studio</span><span class="tag">Graphics</span>
                   </div>
                   <div class="actions">
-                    <a class="btn" href="https://github.com/ZarinRoichi" target="_blank" rel="noreferrer">GitHub</a>
-                    <a class="btn btn2" href="#" onclick="alert('Add repo link here'); return false;">Repo</a>
+                    <a class="btn" href="https://github.com/ZarinRoichi?tab=repositories&q=dx+ball" target="_blank" rel="noreferrer">GitHub (Repo/Search)</a>
                   </div>
                 </div>
               </div>
@@ -616,7 +613,8 @@
           </div>
           <div class="sec-body">
             <p class="muted" style="margin-top:0;">
-              I work on applied NLP and misinformation detection for Bengali, focusing on model training, evaluation, and deployment.
+              I work on applied Bengali NLP and misinformation detection, focusing on transformers and LLM-oriented workflows,
+              along with practical evaluation and deployment.
             </p>
             <div class="grid two">
               <div class="kv">
