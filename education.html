@@ -6,111 +6,169 @@
   <title>Zarin Tasnim Roichi | Education</title>
 
   <style>
-    :root{--bg:#ffffff;--text:#111827;--muted:#6b7280;--line:#e5e7eb;--accent:#2563eb;--sidebar:320px;--max:1100px;}
+    :root{--bg:#ffffff;--text:#111827;--muted:#6b7280;--accent:#2563eb;--sidebar:320px;--max:1060px;}
     *{box-sizing:border-box}
-    body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";background:var(--bg);color:var(--text);line-height:1.85;}
+    body{
+      margin:0;
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.8;
+    }
+    a{color:var(--accent);text-decoration:none}
+
     .layout{display:flex;min-height:100vh;}
-    aside{width:var(--sidebar);padding:28px 22px;border-right:1px solid var(--line);background:#fff;position:sticky;top:0;height:100vh;overflow:auto;}
+    aside{
+      width:var(--sidebar);
+      padding:28px 22px;
+      border-right:1px solid #e5e7eb;
+      position:sticky;top:0;height:100vh;overflow:auto;
+      background:#fff;
+    }
     main{flex:1;min-width:0;}
 
-    .avatar{width:170px;height:170px;border-radius:999px;object-fit:cover;border:6px solid #fff;box-shadow:0 6px 18px rgba(17,24,39,.08);display:block;margin:6px auto 14px;background:#ddd;}
-    .name{text-align:center;font-size:22px;font-weight:900;margin:0;}
-    .tagline{text-align:center;color:var(--muted);margin:6px 0 14px;font-weight:600;}
-    .pillrow{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:10px 0 18px;}
-    .pill{font-size:12px;color:#1f3a8a;background:#eff6ff;border:1px solid #dbeafe;padding:6px 10px;border-radius:999px;font-weight:800;}
+    .topbar{
+      position:sticky;top:0;z-index:10;
+      background:rgba(255,255,255,.92);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid #e5e7eb;
+    }
+    .topbar-inner{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:14px 18px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+    .brand{font-weight:900}
+    nav{display:flex;gap:18px}
+    nav a{color:var(--muted);font-weight:650;padding:6px 4px}
+    nav a.active{color:var(--accent)}
+    .hamburger{display:none}
 
-    .topbar{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
-    .topbar-inner{max-width:var(--max);margin:0 auto;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:14px;}
-    .brand{font-weight:900;letter-spacing:.2px;white-space:nowrap;}
-    nav{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end;}
-    nav a{color:var(--muted);text-decoration:none;font-weight:700;padding:8px 10px;border-radius:10px;}
-    nav a:hover,nav a.active{color:var(--accent);background:#eff6ff;}
-    .hamburger{display:none;border:1px solid var(--line);background:#fff;border-radius:12px;padding:8px 10px;cursor:pointer;font-weight:800;}
+    .avatar{
+      width:160px;height:160px;border-radius:999px;
+      object-fit:cover;display:block;margin:6px auto 12px;
+      background:#e5e7eb;border:6px solid #fff;
+    }
+    .name{text-align:center;font-size:22px;font-weight:950;margin:0}
+    .tagline{text-align:center;color:var(--muted);margin:6px 0 14px;font-weight:600}
 
-    .wrap{max-width:var(--max);margin:0 auto;padding:26px 18px 44px;}
-    h2{margin:0 0 10px;font-size:26px;font-weight:900;}
-    .sub{color:var(--muted);margin:0 0 18px;}
+    .pillrow{display:flex;gap:8px;justify-content:center;margin-bottom:16px}
+    .pill{
+      font-size:12px;font-weight:800;
+      background:#eef2ff;color:#0b2a6f;
+      padding:6px 10px;border-radius:999px;
+    }
 
-    .edu{display:grid;gap:14px;margin-top:14px;}
-    .item{padding:14px 14px;border:1px solid var(--line);border-radius:14px;background:#fff;}
-    .item b{display:block;margin-bottom:4px;}
-    .muted{color:var(--muted)}
+    .side-links{display:grid;gap:10px}
+    .side-link{
+      display:flex;align-items:center;gap:10px;
+      padding:10px 12px;border-radius:12px;
+      border:1px solid #e5e7eb;color:var(--text);
+    }
+    .icon{
+      width:34px;height:34px;border-radius:10px;
+      display:grid;place-items:center;background:#f3f4f6;
+      font-weight:900;
+    }
 
-    .footer{text-align:center;color:var(--muted);margin-top:26px;font-size:13px;}
+    .wrap{max-width:var(--max);margin:0 auto;padding:28px 18px 56px}
+    .page-title{font-size:32px;font-weight:950;margin:6px 0 16px}
+
+    .edu-entry{margin-bottom:22px}
+    .edu-entry b{display:block;font-size:17px}
+    .edu-entry span{color:var(--muted);font-size:15px}
+
+    .footer{
+      margin-top:36px;
+      color:var(--muted);
+      font-size:13px;
+      text-align:center;
+    }
 
     @media (max-width:980px){
       .layout{flex-direction:column}
-      aside{width:auto;position:relative;height:auto;border-right:none;border-bottom:1px solid var(--line);}
+      aside{width:auto;height:auto;border-right:none;border-bottom:1px solid #e5e7eb}
       nav{display:none}
-      .hamburger{display:inline-block}
-      nav.open{display:flex;flex-direction:column;align-items:flex-start;width:100%}
       .avatar{width:140px;height:140px}
     }
   </style>
 </head>
 
 <body>
-  <div class="layout">
+<div class="layout">
 
-    <aside>
-      <img class="avatar" src="assets/profile.jpg" alt="Zarin Tasnim Roichi" />
-      <h1 class="name">Zarin Tasnim Roichi</h1>
-      <div class="tagline">Education</div>
-      <div class="pillrow">
-        <span class="pill">AUST</span>
-        <span class="pill">CGPA 3.405</span>
-        <span class="pill">Completed 2025</span>
+  <!-- SIDEBAR -->
+  <aside>
+    <img class="avatar" src="assets/profile.jpg" alt="Zarin Tasnim Roichi" />
+    <h1 class="name">Zarin Tasnim Roichi</h1>
+    <div class="tagline">Education</div>
+
+    <div class="pillrow">
+      <span class="pill">AUST</span>
+      <span class="pill">CSE</span>
+    </div>
+
+    <div class="side-links">
+      <a class="side-link" href="mailto:zarinroichi@gmail.com">
+        <div class="icon">✉</div><div>Email</div>
+      </a>
+      <a class="side-link" href="https://github.com/ZarinRoichi" target="_blank">
+        <div class="icon">GH</div><div>GitHub</div>
+      </a>
+      <a class="side-link" href="resume/Zarin_Tasnim_Roichi_CV.pdf" target="_blank">
+        <div class="icon">CV</div><div>Resume</div>
+      </a>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main>
+    <div class="topbar">
+      <div class="topbar-inner">
+        <div class="brand">ZarinRoichi</div>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="projects.html">Projects</a>
+          <a href="research.html">Research</a>
+          <a class="active" href="education.html">Education</a>
+          <a href="cv.html">CV</a>
+        </nav>
       </div>
-    </aside>
+    </div>
 
-    <main>
-      <div class="topbar">
-        <div class="topbar-inner">
-          <div class="brand">ZarinRoichi</div>
-          <button class="hamburger" id="menuBtn">☰ Menu</button>
-          <nav id="nav">
-            <a href="index.html">Home</a>
-            <a href="projects.html">Projects</a>
-            <a href="research.html">Research</a>
-            <a href="education.html" class="active">Education</a>
-            <a href="cv.html">CV</a>
-          </nav>
-        </div>
+    <div class="wrap">
+      <div class="page-title">Education</div>
+
+      <div class="edu-entry">
+        <b>B.Sc. in Computer Science & Engineering</b>
+        <span>Ahsanullah University of Science & Technology (AUST)</span><br/>
+        <span>2021 – December 2025 • CGPA: 3.405 / 4.00</span>
       </div>
 
-      <div class="wrap">
-        <h2>Education</h2>
-        <p class="sub">Academic background.</p>
-
-        <div class="edu">
-          <div class="item">
-            <b>B.Sc. in Computer Science & Engineering — AUST</b>
-            <div class="muted">Completed: December 2025 • CGPA: 3.405 / 4.00</div>
-          </div>
-
-          <div class="item">
-            <b>Holy Cross College, Dhaka (HSC)</b>
-            <div class="muted">2019 • GPA: 5.00 / 5.00</div>
-          </div>
-
-          <div class="item">
-            <b>A.V.J.M Govt. Girls High School (SSC)</b>
-            <div class="muted">2017 • GPA: 5.00 / 5.00</div>
-          </div>
-        </div>
-
-        <div class="footer">
-          © <span id="year"></span> Zarin Tasnim Roichi • Built with GitHub Pages
-        </div>
+      <div class="edu-entry">
+        <b>Higher Secondary Certificate (HSC)</b>
+        <span>Holy Cross College, Dhaka</span><br/>
+        <span>2019 • GPA: 5.00 / 5.00</span>
       </div>
-    </main>
-  </div>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-    const btn = document.getElementById("menuBtn");
-    const nav = document.getElementById("nav");
-    btn?.addEventListener("click", () => nav.classList.toggle("open"));
-  </script>
+      <div class="edu-entry">
+        <b>Secondary School Certificate (SSC)</b>
+        <span>A.V.J.M Govt. Girls High School</span><br/>
+        <span>2017 • GPA: 5.00 / 5.00</span>
+      </div>
+
+      <div class="footer">
+        © <span id="year"></span> Zarin Tasnim Roichi
+      </div>
+    </div>
+  </main>
+</div>
+
+<script>
+  document.getElementById("year").textContent=new Date().getFullYear();
+</script>
 </body>
 </html>
