@@ -1,89 +1,114 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Zarin Tasnim Roichi | Research</title>
 
   <style>
-    :root{--bg:#ffffff;--text:#111827;--muted:#6b7280;--line:#e5e7eb;--accent:#2563eb;--sidebar:320px;--max:1060px;}
+    :root{--bg:#fff;--text:#111827;--muted:#6b7280;--line:#e5e7eb;--accent:#2563eb;--sidebar:320px;--max:1060px}
     *{box-sizing:border-box}
-    body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";background:var(--bg);color:var(--text);line-height:1.85;}
-    a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+    body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;line-height:1.8;background:var(--bg);color:var(--text)}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
 
-    .layout{display:flex;min-height:100vh;}
-    aside{width:var(--sidebar);padding:28px 22px;border-right:1px solid var(--line);position:sticky;top:0;height:100vh;overflow:auto;background:#fff;}
-    main{flex:1;min-width:0;}
+    .layout{display:flex;min-height:100vh;gap:0;background:#fff}
+    aside{width:var(--sidebar);padding:26px 22px;position:sticky;top:0;height:100vh;overflow:auto;background:#fff;border-right:none!important;box-shadow:none!important}
+    main{flex:1;min-width:0;border-left:none!important;box-shadow:none!important}
 
-    .topbar{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
-    .topbar-inner{max-width:var(--max);margin:0 auto;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
-    .brand{font-weight:900;letter-spacing:.2px;color:var(--text);white-space:nowrap;}
-    nav{display:flex;gap:18px;align-items:center;flex-wrap:wrap;}
-    nav a{color:var(--muted);font-weight:650;padding:8px 4px;border-bottom:2px solid transparent;}
-    nav a:hover{color:var(--text);text-decoration:none}
-    nav a.active{color:var(--accent);border-bottom-color:var(--accent);}
-    .hamburger{display:none;border:1px solid var(--line);background:#fff;border-radius:10px;padding:8px 10px;cursor:pointer;font-weight:800;}
+    /* Top nav */
+    .topbar{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid var(--line)}
+    .topbar-inner{max-width:var(--max);margin:0 auto;padding:14px 18px;display:flex;justify-content:space-between;align-items:center}
+    .brand{font-weight:900;letter-spacing:.2px}
+    nav{display:flex;gap:18px;align-items:center}
+    nav a{color:var(--muted);font-weight:650}
+    nav a.active{color:var(--accent);text-decoration:underline;text-underline-offset:8px;text-decoration-thickness:2px}
+    .hamburger{display:none;border:1px solid var(--line);background:#fff;border-radius:10px;padding:8px 10px;font-weight:800}
 
-    .avatar{width:170px;height:170px;border-radius:999px;object-fit:cover;display:block;margin:6px auto 14px;background:#e5e7eb;border:6px solid #fff;box-shadow:0 10px 25px rgba(17,24,39,.08);}
-    .name{text-align:center;font-size:22px;font-weight:950;margin:0;}
-    .tagline{text-align:center;color:var(--muted);margin:6px 0 14px;font-weight:600;}
-    .pillrow{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:10px 0 18px;}
-    .pill{font-size:12px;color:#0b2a6f;background:#eef2ff;border:1px solid #dbe3ff;padding:6px 10px;border-radius:999px;font-weight:800;}
-    .side-links{margin-top:14px;display:grid;gap:10px;}
-    .side-link{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:12px;border:1px solid var(--line);color:var(--text);background:#fff;text-decoration:none;}
-    .side-link:hover{text-decoration:none;border-color:#d1d5db}
-    .side-link small{color:var(--muted);display:block;margin-top:2px}
-    .icon{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:#f3f4f6;color:#111827;font-weight:900;flex:0 0 auto;}
+    /* Sidebar (index-like, no boxes) */
+    .avatar{width:160px;height:160px;border-radius:999px;object-fit:cover;display:block;margin:10px auto 12px;background:#e5e7eb;border:6px solid #fff;box-shadow:0 10px 25px rgba(17,24,39,.08)}
+    .name{text-align:center;font-size:22px;font-weight:900;margin:0}
+    .tagline{text-align:center;color:#374151;margin:6px 0 4px;font-weight:650}
+    .skills{margin:0 0 10px;text-align:center;color:var(--muted);font-size:13.5px}
+    .side-meta{margin:0 0 14px;color:var(--muted);font-size:13.5px;text-align:center}
 
-    .wrap{max-width:var(--max);margin:0 auto;padding:28px 18px 56px;}
-    .page-title{font-size:44px;font-weight:950;letter-spacing:.2px;margin:12px 0 18px;}
-    .sub{color:var(--muted);margin:0 0 18px;}
+    .contact-list{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+    .contact-item{display:flex;align-items:center;gap:10px;justify-content:center}
+    .c-ico{width:18px;height:18px;color:var(--muted)}
+    .contact-item a{font-size:14px;font-weight:650;color:var(--text);text-decoration:none}
+    .contact-item a:hover{color:var(--accent);text-decoration:underline}
 
-    /* ====== IMPORTANT: SAME CARD STYLE FOR ALL ====== */
-    .intro{
-      background:#f9fafb;border:1px solid var(--line);border-left:6px solid var(--accent);
-      border-radius:16px;padding:18px 18px;margin:0 0 22px;
+    .status{margin-top:14px;font-size:13px;color:var(--muted);text-align:center}
+
+    /* Content */
+    .wrap{max-width:var(--max);margin:0 auto;padding:26px 18px 52px}
+    .page-title{font-size:44px;letter-spacing:.2px;font-weight:950;margin:12px 0 14px;color:#111827}
+
+    /* Summary card (same look as your screenshot first card style) */
+    .summary{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:18px 18px;
+      position:relative;
+      box-shadow:0 10px 25px rgba(17,24,39,.04);
     }
-    .intro p{margin:0;color:#374151}
+    .summary:before{
+      content:"";
+      position:absolute;
+      left:0;top:0;bottom:0;
+      width:6px;
+      border-radius:18px 0 0 18px;
+      background:var(--accent);
+    }
+    .summary p{margin:0;color:#374151;font-size:16px}
+    .summary b{color:#111827}
 
-    .cards{display:flex;flex-direction:column;gap:18px;margin-top:10px;}
+    /* Project cards (ALL same) */
     .card{
-      background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;
-      transition:all .18s ease;
+      margin-top:18px;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:18px 18px 16px;
+      box-shadow:0 10px 25px rgba(17,24,39,.04);
     }
-    .card:hover{border-color:#c7d2fe;box-shadow:0 10px 22px rgba(0,0,0,.05);}
-    .card h2{margin:0 0 10px;font-size:26px;font-weight:950;}
-    .card p{margin:0;color:#4b5563;line-height:1.75;}
+    .card h3{margin:0 0 10px;font-size:26px;font-weight:950;color:#111827}
+    .card p{margin:0 0 14px;color:#374151;font-size:16px}
 
-    .tags{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0 14px;}
-    .tag{
-      font-size:13px;font-weight:800;color:#0f172a;
-      background:#f1f5f9;border:1px solid #e2e8f0;
-      padding:8px 14px;border-radius:999px;
+    .chips{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 14px}
+    .chip{
+      font-size:13px;
+      font-weight:800;
+      color:#111827;
+      background:#f3f4f6;
+      border:1px solid #e5e7eb;
+      padding:8px 12px;
+      border-radius:999px;
     }
 
     .btn{
-      display:inline-flex;align-items:center;justify-content:center;
-      padding:12px 18px;border-radius:14px;
-      background:var(--accent);color:#fff;font-weight:900;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:12px 18px;
+      border-radius:14px;
+      background:var(--accent);
+      color:#fff;
+      font-weight:900;
+      border:1px solid transparent;
       text-decoration:none;
-      box-shadow:0 10px 20px rgba(37,99,235,.18);
     }
-    .btn:hover{background:#1d4ed8;text-decoration:none}
+    .btn:hover{filter:brightness(.97);text-decoration:none}
 
-    .note{
-      margin-top:20px;padding:12px 14px;border:1px dashed var(--line);
-      border-radius:14px;color:var(--muted);
-    }
-
-    .footer{margin-top:28px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:13px;text-align:center;}
+    .footer{margin-top:26px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:13px;text-align:center}
 
     @media (max-width:980px){
       .layout{flex-direction:column}
-      aside{width:auto;position:relative;height:auto;border-right:none;border-bottom:1px solid var(--line);}
+      aside{width:auto;height:auto;border:none!important;border-bottom:1px solid var(--line)!important}
       nav{display:none}
       .hamburger{display:inline-block}
-      nav.open{display:flex;flex-direction:column;align-items:flex-start;width:100%}
+      nav.open{display:flex;flex-direction:column;gap:10px;align-items:flex-start;padding-top:10px}
       .avatar{width:140px;height:140px}
       .page-title{font-size:34px}
     }
@@ -91,130 +116,125 @@
 </head>
 
 <body>
-  <div class="layout">
-    <aside>
-      <img class="avatar" src="assets/profile.jpg" alt="Zarin Tasnim Roichi" />
-      <h1 class="name">Zarin Tasnim Roichi</h1>
-      <div class="tagline">Applied NLP • LLMs • Misinformation</div>
+<div class="layout">
 
-      <div class="pillrow">
-        <span class="pill">Research</span>
-        <span class="pill">Bangla NLP</span>
-        <span class="pill">LLMs</span>
-        <span class="pill">Multimodal</span>
+  <!-- SIDEBAR (same as index style) -->
+  <aside>
+    <img class="avatar" src="assets/profile.jpg" alt="Zarin Tasnim Roichi">
+
+    <h1 class="name">Zarin Tasnim Roichi</h1>
+    <div class="tagline">Applied NLP • LLMs • Multimodal AI</div>
+    <div class="skills">Transformers · Bengali NLP · Evaluation · Deployable Pipelines</div>
+    <div class="side-meta">Dhaka, Bangladesh</div>
+
+    <ul class="contact-list">
+      <li class="contact-item">
+        <svg class="c-ico" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.2.8-.6v-2.1c-3.3.7-4-1.4-4-1.4-.5-1.2-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 .1.8 2.1 3.4 1.5.1-.7.4-1.1.7-1.4-2.6-.3-5.3-1.3-5.3-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.3 11.3 0 0 1 6 0C17.2 6.9 18.2 7.2 18.2 7.2c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.2 0 4.6-2.7 5.6-5.3 5.9.4.3.8 1 .8 2v3c0 .4.2.7.8.6A12 12 0 0 0 12 .5Z"/></svg>
+        <a href="https://github.com/ZarinRoichi" target="_blank" rel="noreferrer">ZarinRoichi</a>
+      </li>
+      <li class="contact-item">
+        <svg class="c-ico" viewBox="0 0 24 24"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.05-1.86-3.05-1.86 0-2.15 1.45-2.15 2.95v5.67H9.32V9h3.42v1.56h.05c.48-.9 1.64-1.86 3.37-1.86 3.6 0 4.27 2.37 4.27 5.45v6.3ZM5.34 7.43A2.06 2.06 0 1 1 5.34 3.3a2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z"/></svg>
+        <a href="https://www.linkedin.com/in/zarin-tasnim-roichi/" target="_blank" rel="noreferrer">zarin-tasnim-roichi</a>
+      </li>
+      <li class="contact-item">
+        <svg class="c-ico" viewBox="0 0 24 24"><path fill="currentColor" d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2Zm0 4-8 5L4 8V6l8 5 8-5v2Z"/></svg>
+        <a href="mailto:zarinroichi@gmail.com">zarinroichi@gmail.com</a>
+      </li>
+    </ul>
+
+    <p class="status">CSE graduate (AUST) · Open to research & ML roles</p>
+  </aside>
+
+  <!-- MAIN -->
+  <main>
+    <div class="topbar">
+      <div class="topbar-inner">
+        <div class="brand">ZarinRoichi</div>
+        <button class="hamburger" id="menuBtn">☰</button>
+        <nav id="nav">
+          <a href="index.html">Home</a>
+          <a href="projects.html">Projects</a>
+          <a class="active" href="research.html">Research</a>
+          <a href="education.html">Education</a>
+          <a href="cv.html">CV</a>
+        </nav>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <div class="page-title">Research</div>
+
+      <!-- Summary -->
+      <div class="summary">
+        <p>
+          My research focuses on <b>Bengali NLP</b>, <b>multimodal misinformation detection</b>, and <b>LLM-oriented workflows</b>.
+          I build transformer-based classifiers for fake review/news and sentiment tasks, study <b>class imbalance</b> and <b>error patterns</b>,
+          and develop <b>deployable pipelines</b> that connect models to real-time applications. I’m also exploring <b>Generative AI</b>
+          and reliable evaluation practices for low-resource settings.
+        </p>
       </div>
 
-      <div class="side-links">
-        <a class="side-link" href="mailto:zarinroichi@gmail.com"><div class="icon">✉</div><div><b>Email</b><small>zarinroichi@gmail.com</small></div></a>
-        <a class="side-link" href="https://github.com/ZarinRoichi" target="_blank" rel="noreferrer"><div class="icon">GH</div><div><b>GitHub</b><small>ZarinRoichi</small></div></a>
-        <a class="side-link" href="resume/Zarin_Tasnim_Roichi_CV.pdf" target="_blank" rel="noreferrer"><div class="icon">CV</div><div><b>Resume</b><small>PDF</small></div></a>
-      </div>
-    </aside>
-
-    <main>
-      <div class="topbar">
-        <div class="topbar-inner">
-          <div class="brand">ZarinRoichi</div>
-          <button class="hamburger" id="menuBtn">☰ Menu</button>
-          <nav id="nav">
-            <a href="index.html">Home</a>
-            <a href="projects.html">Projects</a>
-            <a class="active" href="research.html">Research</a>
-            <a href="education.html">Education</a>
-            <a href="cv.html">CV</a>
-          </nav>
+      <!-- Project 1 -->
+      <div class="card">
+        <h3>1) Bengali Fake Review Detection</h3>
+        <p>
+          Built and evaluated transformer-based Bengali review classifiers by training and comparing multiple pretrained models.
+          The project emphasizes imbalance handling (balancing + augmentation), class-wise behavior, and systematic error analysis
+          to understand where models fail and how to improve reliability.
+        </p>
+        <div class="chips">
+          <span class="chip">BanglaBERT</span>
+          <span class="chip">XLM-R</span>
+          <span class="chip">Evaluation</span>
+          <span class="chip">Error Analysis</span>
         </div>
+        <a class="btn" href="https://github.com/ZarinRoichi/BengaliFakeReview" target="_blank" rel="noreferrer">GitHub Repo</a>
       </div>
 
-      <div class="wrap">
-        <div class="page-title">Research</div>
-
-        <div class="intro">
-          <p>
-            My research focuses on <b>Bengali NLP</b> and practical ML evaluation. I work with transformer-based models for
-            classification (fake reviews/news, sentiment), study dataset balancing and error patterns, and build deployable pipelines.
-          </p>
+      <!-- Project 2 (same design as Project 1) -->
+      <div class="card">
+        <h3>2) Bengali Fake News Detection</h3>
+        <p>
+          Developed a Bengali misinformation detection pipeline with transformer baselines and structured evaluation.
+          Focus areas include robust preprocessing, dataset balancing strategies, and analysis of misclassified samples
+          to identify common linguistic cues and failure cases in real-world news-style text.
+        </p>
+        <div class="chips">
+          <span class="chip">NLP</span>
+          <span class="chip">Transformers</span>
+          <span class="chip">Metrics</span>
+          <span class="chip">Pipeline</span>
         </div>
-
-        <div class="cards">
-
-          <div class="card">
-            <h2>1) Bengali Fake Review Detection</h2>
-            <p>
-              Explored transformer-based Bengali review classification by training and comparing pretrained models.
-              Emphasis was placed on dataset balancing, class-wise behavior, and error analysis to understand where models fail and why.
-            </p>
-            <div class="tags">
-              <span class="tag">BanglaBERT</span>
-              <span class="tag">XLM-R</span>
-              <span class="tag">Evaluation</span>
-              <span class="tag">Error Analysis</span>
-            </div>
-            <a class="btn"
-   href="https://github.com/ZarinRoichi/BengaliFakeReview"
-   target="_blank" rel="noreferrer">
-  GitHub Repo
-</a>
-
-          </div>
-
-          <div class="card">
-            <h2>2) Bengali Fake News Detection</h2>
-            <p>
-              Built and evaluated Bengali misinformation classification pipelines using transformer models.
-              Compared training settings and preprocessing choices to improve generalization and reliability across unseen news-style text.
-            </p>
-            <div class="tags">
-              <span class="tag">NLP</span>
-              <span class="tag">Transformers</span>
-              <span class="tag">Metrics</span>
-              <span class="tag">Pipeline</span>
-            </div>
-            <a class="btn"
-   href="https://github.com/ZarinRoichi/BengaliFakeNewsDetection"
-   target="_blank" rel="noreferrer">
-  GitHub Repo
-</a>
-
-          </div>
-
-          <div class="card">
-            <h2>3) Sentiment Analysis of Bengali Movie Reviews</h2>
-            <p>
-              Fine-tuned transformer models for Bengali sentiment classification with efficient training methods.
-              Applied PEFT/LoRA-style tuning and tracked performance across different settings to ensure stable, reproducible results.
-            </p>
-            <div class="tags">
-              <span class="tag">Transformers</span>
-              <span class="tag">LoRA / PEFT</span>
-              <span class="tag">Evaluation</span>
-              <span class="tag">Bengali NLP</span>
-            </div>
-            <a class="btn"
-   href="https://github.com/ZarinRoichi/SentimentAnalysisofMovieReviews"
-   target="_blank" rel="noreferrer">
-  GitHub Repo
-</a>
-
-          </div>
-
-        </div>
-
-        <div class="note">
-          <b>Publications:</b> Currently none (will be updated as work gets published).
-        </div>
-
-        <div class="footer">
-          © <span id="year"></span> Zarin Tasnim Roichi • Built with GitHub Pages
-        </div>
+        <a class="btn" href="https://github.com/ZarinRoichi/BengaliFakeNewsDetection" target="_blank" rel="noreferrer">GitHub Repo</a>
       </div>
-    </main>
-  </div>
 
-  <script>
-    document.getElementById("year").textContent=new Date().getFullYear();
-    const btn=document.getElementById("menuBtn"),nav=document.getElementById("nav");
-    btn?.addEventListener("click",()=>nav.classList.toggle("open"));
-  </script>
+      <!-- Project 3 (same design as Project 1) -->
+      <div class="card">
+        <h3>3) Sentiment Analysis of Bengali Movie Reviews</h3>
+        <p>
+          Fine-tuned transformer models for Bengali sentiment classification and compared standard fine-tuning vs PEFT approaches.
+          The work highlights training stability, evaluation consistency, and practical deployment readiness (clean preprocessing and reproducible runs).
+        </p>
+        <div class="chips">
+          <span class="chip">Transformers</span>
+          <span class="chip">LoRA/PEFT</span>
+          <span class="chip">Training</span>
+          <span class="chip">Evaluation</span>
+        </div>
+        <a class="btn" href="https://github.com/ZarinRoichi/SentimentAnalysisofMovieReviews" target="_blank" rel="noreferrer">GitHub Repo</a>
+      </div>
+
+      <div class="footer">
+        © <span id="year"></span> Zarin Tasnim Roichi
+      </div>
+    </div>
+  </main>
+</div>
+
+<script>
+  document.getElementById("year").textContent=new Date().getFullYear();
+  const b=document.getElementById("menuBtn"),n=document.getElementById("nav");
+  b&&b.addEventListener("click",()=>n.classList.toggle("open"));
+</script>
 </body>
 </html>
