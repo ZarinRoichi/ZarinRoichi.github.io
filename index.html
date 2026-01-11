@@ -30,20 +30,30 @@
     .name{text-align:center;font-size:22px;font-weight:900;margin:0}
     .tagline{text-align:center;color:#374151;margin:6px 0 6px;font-weight:650}
     .skills{margin:0 0 12px;text-align:center;color:var(--muted);font-size:13.5px}
+    .side-meta{margin:0 0 12px;color:var(--muted);font-size:13.5px;text-align:center}
 
-    .side-meta{margin:0 0 14px;color:var(--muted);font-size:13.5px;text-align:center}
-
-    .side-divider{height:1px;background:var(--line);margin:14px 0}
-
-    .side-links{list-style:none;padding:0;margin:0}
-    .side-links li{margin:8px 0}
-    .side-links a{
-      color:var(--text);
-      font-weight:600;
-      font-size:14px;
-      display:inline-block;
+    /* CV-like inline contacts (no "Email/LinkedIn/GitHub" labels) */
+    .side-inline{
+      margin:10px 0 0;
+      text-align:center;
+      font-size:13.5px;
+      color:var(--muted);
+      line-height:1.6;
     }
-    .side-links a:hover{color:var(--accent)}
+    .side-inline a{
+      color:var(--text);
+      font-weight:650;
+      text-decoration:none;
+    }
+    .side-inline a:hover{
+      color:var(--accent);
+      text-decoration:underline;
+    }
+    .side-inline .sep{
+      margin:0 8px;
+      color:#cbd5e1;
+      font-weight:700;
+    }
 
     .status{margin:14px 0 0;font-size:13px;color:var(--muted);text-align:center}
 
@@ -74,7 +84,7 @@
 <body>
 <div class="layout">
 
-  <!-- SIDEBAR (Professional academic style) -->
+  <!-- SIDEBAR -->
   <aside>
     <img class="avatar" src="assets/profile.jpg" alt="Zarin Tasnim Roichi"/>
 
@@ -83,16 +93,14 @@
     <p class="skills">Python · Transformers · SQL · Backend Systems</p>
     <div class="side-meta">Dhaka, Bangladesh</div>
 
-    <div class="side-divider"></div>
-
-    <ul class="side-links">
-      <li><a href="mailto:zarinroichi@gmail.com">Email</a></li>
-      <li><a href="https://www.linkedin.com/in/zarin-tasnim-roichi/" target="_blank" rel="noreferrer">LinkedIn</a></li>
-      <li><a href="https://github.com/ZarinRoichi" target="_blank" rel="noreferrer">GitHub</a></li>
-      <li><a href="resume/Zarin_Tasnim_Roichi_CV.pdf" target="_blank" rel="noreferrer">CV (PDF)</a></li>
-    </ul>
-
-    <div class="side-divider"></div>
+    <!-- CV-style contacts -->
+    <div class="side-inline">
+      <a href="https://github.com/ZarinRoichi" target="_blank" rel="noreferrer">ZarinRoichi</a>
+      <span class="sep">|</span>
+      <a href="https://www.linkedin.com/in/zarin-tasnim-roichi/" target="_blank" rel="noreferrer">zarin-tasnim-roichi</a>
+      <span class="sep">|</span>
+      <a href="mailto:zarinroichi@gmail.com">zarinroichi@gmail.com</a>
+    </div>
 
     <p class="status">CSE graduate (AUST) · Open to research & ML roles</p>
   </aside>
