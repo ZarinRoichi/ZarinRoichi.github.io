@@ -6,48 +6,56 @@
   <title>Zarin Tasnim Roichi | Projects</title>
 
   <style>
-    /* SAME CSS (kept identical for consistent design) */
-    :root{--bg:#f6f7fb;--card:#ffffff;--text:#1f2937;--muted:#6b7280;--line:#e5e7eb;--accent:#2563eb;--shadow:0 10px 24px rgba(17,24,39,.08);--radius:18px;--sidebar:320px;}
+    :root{
+      --bg:#ffffff; --text:#111827; --muted:#6b7280; --line:#e5e7eb; --accent:#2563eb;
+      --sidebar:320px; --max:1100px;
+    }
     *{box-sizing:border-box}
-    body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";background:var(--bg);color:var(--text);line-height:1.6;}
+    body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";background:var(--bg);color:var(--text);line-height:1.8;}
     .layout{display:flex;min-height:100vh;}
-    aside{width:var(--sidebar);padding:28px 22px;border-right:1px solid var(--line);background:linear-gradient(180deg,#ffffff,#fbfbff);position:sticky;top:0;height:100vh;overflow:auto;}
+    aside{width:var(--sidebar);padding:28px 22px;border-right:1px solid var(--line);background:#fff;position:sticky;top:0;height:100vh;overflow:auto;}
     main{flex:1;min-width:0;}
-    .topbar{position:sticky;top:0;z-index:10;background:rgba(246,247,251,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
-    .topbar-inner{max-width:1100px;margin:0 auto;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;}
-    .brand{font-weight:800;letter-spacing:.2px;}
-    nav{display:flex;gap:14px;flex-wrap:wrap;justify-content:flex-end;}
-    nav a{color:var(--muted);text-decoration:none;font-weight:600;padding:8px 10px;border-radius:10px;}
-    nav a:hover,nav a.active{color:var(--accent);background:#eaf2ff;}
-    .hamburger{display:none;border:1px solid var(--line);background:var(--card);border-radius:12px;padding:8px 10px;cursor:pointer;font-weight:700;}
-    .avatar{width:170px;height:170px;border-radius:999px;object-fit:cover;border:8px solid #fff;box-shadow:var(--shadow);display:block;margin:6px auto 14px;background:#ddd;}
+
+    .avatar{width:170px;height:170px;border-radius:999px;object-fit:cover;border:6px solid #fff;box-shadow:0 6px 18px rgba(17,24,39,.08);display:block;margin:6px auto 14px;background:#ddd;}
     .name{text-align:center;font-size:22px;font-weight:900;margin:0;}
     .tagline{text-align:center;color:var(--muted);margin:6px 0 14px;font-weight:600;}
     .pillrow{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:10px 0 18px;}
-    .pill{font-size:12px;color:#0b2a6f;background:#eaf2ff;border:1px solid #d7e7ff;padding:6px 10px;border-radius:999px;font-weight:700;}
+    .pill{font-size:12px;color:#1f3a8a;background:#eff6ff;border:1px solid #dbeafe;padding:6px 10px;border-radius:999px;font-weight:800;}
     .side-links{margin-top:14px;display:grid;gap:10px;}
-    .side-link{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:14px;border:1px solid var(--line);background:var(--card);text-decoration:none;color:var(--text);box-shadow:0 1px 0 rgba(17,24,39,.03);}
+    .side-link{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:14px;border:1px solid var(--line);background:#fff;text-decoration:none;color:var(--text);}
     .side-link small{color:var(--muted);display:block;margin-top:2px}
-    .icon{width:34px;height:34px;border-radius:12px;display:grid;place-items:center;background:#eef2ff;color:var(--accent);font-weight:900;flex:0 0 auto;}
-    .wrap{max-width:1100px;margin:0 auto;padding:24px 18px 40px;}
-    section{margin:22px 0;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;}
-    .sec-head{padding:18px 18px 10px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:10px;}
-    .sec-head h2{margin:0;font-size:18px;letter-spacing:.2px;}
-    .sec-body{padding:16px 18px 18px;}
-    .muted{color:var(--muted)}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 12px;border-radius:12px;border:1px solid #cfe2ff;background:#eaf2ff;color:var(--accent);text-decoration:none;font-weight:800;}
-    .btn2{border:1px solid var(--line);background:#fff;color:var(--text);}
-    .grid{display:grid;gap:14px;}
-    .grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}
-    .card{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fff;}
-    .thumbbox{width:100%;height:120px;background:linear-gradient(135deg,#eef2ff,#f8fafc);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--muted);font-weight:900;}
-    .card-body{padding:12px 12px 14px;}
-    .card-title{margin:0 0 6px;font-weight:900;font-size:15px;}
-    .card-text{margin:0 0 10px;color:var(--muted);font-size:13.5px;}
-    .meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px;}
-    .tag{font-size:12px;padding:5px 9px;border-radius:999px;background:#f3f4f6;border:1px solid #eceff3;color:#374151;font-weight:700;}
-    .actions{display:flex;gap:10px;flex-wrap:wrap;}
-    @media (max-width:980px){.layout{flex-direction:column}aside{width:auto;position:relative;height:auto;border-right:none;border-bottom:1px solid var(--line);}nav{display:none}.hamburger{display:inline-block}nav.open{display:flex;flex-direction:column;align-items:flex-start;width:100%}.grid.two{grid-template-columns:1fr}.avatar{width:140px;height:140px}}
+    .icon{width:34px;height:34px;border-radius:12px;display:grid;place-items:center;background:#eff6ff;color:var(--accent);font-weight:900;flex:0 0 auto;}
+
+    .topbar{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+    .topbar-inner{max-width:var(--max);margin:0 auto;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:14px;}
+    .brand{font-weight:900;letter-spacing:.2px;white-space:nowrap;}
+    nav{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end;}
+    nav a{color:var(--muted);text-decoration:none;font-weight:700;padding:8px 10px;border-radius:10px;}
+    nav a:hover,nav a.active{color:var(--accent);background:#eff6ff;}
+    .hamburger{display:none;border:1px solid var(--line);background:#fff;border-radius:12px;padding:8px 10px;cursor:pointer;font-weight:800;}
+
+    .wrap{max-width:var(--max);margin:0 auto;padding:26px 18px 44px;}
+    h2{margin:0 0 10px;font-size:26px;font-weight:900;}
+    .sub{color:var(--muted);margin:0 0 18px;}
+    .section{margin-top:26px;padding-top:18px;border-top:1px solid var(--line);}
+    .section h3{margin:0 0 10px;font-size:18px;font-weight:900;}
+    .list{display:grid;gap:14px;}
+    .item{padding:14px 14px;border:1px solid var(--line);border-radius:14px;background:#fff;}
+    .item-title{margin:0 0 6px;font-weight:900;}
+    .item-desc{margin:0 0 10px;color:var(--muted);font-size:14px;}
+    .meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;}
+    .tag{font-size:12px;padding:5px 9px;border-radius:999px;background:#f9fafb;border:1px solid #eef2f7;color:#374151;font-weight:800;}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:9px 11px;border-radius:12px;border:1px solid #dbeafe;background:#eff6ff;color:var(--accent);text-decoration:none;font-weight:900;}
+    .footer{text-align:center;color:var(--muted);margin-top:26px;font-size:13px;}
+
+    @media (max-width:980px){
+      .layout{flex-direction:column}
+      aside{width:auto;position:relative;height:auto;border-right:none;border-bottom:1px solid var(--line);}
+      nav{display:none}
+      .hamburger{display:inline-block}
+      nav.open{display:flex;flex-direction:column;align-items:flex-start;width:100%}
+      .avatar{width:140px;height:140px}
+    }
   </style>
 </head>
 
@@ -61,22 +69,21 @@
 
       <div class="pillrow">
         <span class="pill">Projects</span>
-        <span class="pill">NLP</span>
-        <span class="pill">SQL</span>
-        <span class="pill">Web</span>
+        <span class="pill">Implementation</span>
+        <span class="pill">Code</span>
       </div>
 
       <div class="side-links">
         <a class="side-link" href="mailto:zarinroichi@gmail.com"><div class="icon">✉</div><div><b>Email</b><small>zarinroichi@gmail.com</small></div></a>
-        <a class="side-link" href="https://github.com/ZarinRoichi" target="_blank" rel="noreferrer"><div class="icon">GH</div><div><b>GitHub</b><small>github.com/ZarinRoichi</small></div></a>
-        <a class="side-link" href="resume/Zarin_Tasnim_Roichi_CV.pdf" target="_blank" rel="noreferrer"><div class="icon">CV</div><div><b>Resume</b><small>Download PDF</small></div></a>
+        <a class="side-link" href="https://github.com/ZarinRoichi" target="_blank" rel="noreferrer"><div class="icon">GH</div><div><b>GitHub</b><small>ZarinRoichi</small></div></a>
+        <a class="side-link" href="resume/Zarin_Tasnim_Roichi_CV.pdf" target="_blank" rel="noreferrer"><div class="icon">CV</div><div><b>Resume</b><small>PDF</small></div></a>
       </div>
     </aside>
 
     <main>
       <div class="topbar">
         <div class="topbar-inner">
-          <div class="brand">Portfolio</div>
+          <div class="brand">ZarinRoichi</div>
           <button class="hamburger" id="menuBtn">☰ Menu</button>
           <nav id="nav">
             <a href="index.html">Home</a>
@@ -89,154 +96,110 @@
       </div>
 
       <div class="wrap">
+        <h2>Projects</h2>
+        <p class="sub">Selected implementations (ML + Software + IoT). ML projects stay here because they are code/implementation; Research page is for interests/directions.</p>
 
-        <section>
-          <div class="sec-head">
-            <h2>Projects</h2>
-            <span class="muted">ML + Software + IoT</span>
-          </div>
-          <div class="sec-body">
+        <div class="section">
+          <h3>Machine Learning & AI</h3>
+          <div class="list">
 
-            <h3 style="margin:0 0 10px;">Machine Learning &amp; AI</h3>
-            <div class="grid two">
-              <div class="card">
-                <div class="thumbbox">NLP • Transformers</div>
-                <div class="card-body">
-                  <p class="card-title">Bengali Fake Review Detection</p>
-                  <p class="card-text">Bengali text classification using transformer models; balancing, augmentation and error analysis (~98% F1 best).</p>
-                  <div class="meta"><span class="tag">BanglaBERT</span><span class="tag">XLM-R</span><span class="tag">Evaluation</span></div>
-                  <div class="actions">
-                    <a class="btn" href="https://github.com/ZarinRoichi?tab=repositories&q=fake+review" target="_blank" rel="noreferrer">GitHub (Repo/Search)</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="card">
-                <div class="thumbbox">LoRA/PEFT</div>
-                <div class="card-body">
-                  <p class="card-title">Sentiment Analysis (Bengali Movie Reviews)</p>
-                  <p class="card-text">Binary sentiment classification; fine-tuning with LoRA/PEFT and evaluation pipeline (~97% accuracy).</p>
-                  <div class="meta"><span class="tag">Transformers</span><span class="tag">LoRA</span><span class="tag">Metrics</span></div>
-                  <div class="actions">
-                    <a class="btn" href="https://github.com/ZarinRoichi?tab=repositories&q=sentiment" target="_blank" rel="noreferrer">GitHub (Repo/Search)</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="card">
-                <div class="thumbbox">Multimodal</div>
-                <div class="card-body">
-                  <p class="card-title">Multimodal Bengali Fake News Detection</p>
-                  <p class="card-text">Text + image models (CNN/ViT) with late fusion/ensemble; compare unimodal vs multimodal baselines.</p>
-                  <div class="meta"><span class="tag">Text+Image</span><span class="tag">Fusion</span><span class="tag">ViT/CNN</span></div>
-                  <div class="actions">
-                    <a class="btn" href="https://github.com/ZarinRoichi?tab=repositories&q=multimodal" target="_blank" rel="noreferrer">GitHub (Repo/Search)</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="card">
-                <div class="thumbbox">Dataset</div>
-                <div class="card-body">
-                  <p class="card-title">SOS Dataset Preparation (Ongoing)</p>
-                  <p class="card-text">Audio + text dataset for emergency vs non-emergency classification: labeling, preprocessing, quality control.</p>
-                  <div class="meta"><span class="tag">Audio+Text</span><span class="tag">Labeling</span><span class="tag">Pipeline</span></div>
-                  <div class="actions">
-                    <a class="btn" href="https://github.com/ZarinRoichi?tab=repositories&q=sos" target="_blank" rel="noreferrer">GitHub (Repo/Search)</a>
-                  </div>
-                </div>
-              </div>
+            <div class="item">
+              <p class="item-title">Bengali Fake Review Detection</p>
+              <p class="item-desc">Transformer-based Bengali text classification with balancing, augmentation and error analysis (best ~98% F1).</p>
+              <div class="meta"><span class="tag">BanglaBERT</span><span class="tag">XLM-R</span><span class="tag">Evaluation</span></div>
+              <a class="btn" href="https://github.com/ZarinRoichi/BengaliFakeReview" target="_blank" rel="noreferrer">GitHub Repo</a>
             </div>
 
-            <hr style="border:none;border-top:1px solid var(--line); margin:18px 0;">
-
-            <h3 style="margin:0 0 10px;">Software Development</h3>
-            <div class="grid two">
-              <div class="card">
-                <div class="thumbbox">Web • SQL</div>
-                <div class="card-body">
-                  <p class="card-title">Employee Time &amp; Attendance Tracker</p>
-                  <p class="card-text">Attendance + leave workflow + dashboards + authentication; SQL-backed web app (PHP/MySQL/SQL Server).</p>
-                  <div class="meta"><span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">SQL Server</span></div>
-                  <div class="actions">
-                    <a class="btn" href="https://github.com/ZarinRoichi?tab=repositories&q=attendance" target="_blank" rel="noreferrer">GitHub (Repo/Search)</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="card">
-                <div class="thumbbox">ASP.NET • SQL</div>
-                <div class="card-body">
-                  <p class="card-title">TimeVista Website</p>
-                  <p class="card-text">Backend-driven website with database connectivity and structured information flow.</p>
-                  <div class="meta"><span class="tag">ASP.NET</span><span class="tag">SQL</span><span class="tag">Web</span></div>
-                  <div class="actions">
-                    <a class="btn" href="https://github.com/ZarinRoichi?tab=repositories&q=timevista" target="_blank" rel="noreferrer">GitHub (Repo/Search)</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="card">
-                <div class="thumbbox">App • DB</div>
-                <div class="card-body">
-                  <p class="card-title">AUST Connect</p>
-                  <p class="card-text">University-only social platform: posts, comments, notifications, chat; access control and database handling.</p>
-                  <div class="meta"><span class="tag">App</span><span class="tag">Backend</span><span class="tag">DB</span></div>
-                  <div class="actions">
-                    <a class="btn" href="https://github.com/ZarinRoichi?tab=repositories&q=aust" target="_blank" rel="noreferrer">GitHub (Repo/Search)</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="card">
-                <div class="thumbbox">Java • SQL</div>
-                <div class="card-body">
-                  <p class="card-title">Bus Ticket Management System</p>
-                  <p class="card-text">SQL-based backend system for ticket booking and management; CRUD + validations.</p>
-                  <div class="meta"><span class="tag">Java</span><span class="tag">SQL</span><span class="tag">Backend</span></div>
-                  <div class="actions">
-                    <a class="btn" href="https://github.com/ZarinRoichi?tab=repositories&q=bus" target="_blank" rel="noreferrer">GitHub (Repo/Search)</a>
-                  </div>
-                </div>
-              </div>
+            <div class="item">
+              <p class="item-title">Bengali Fake News Detection</p>
+              <p class="item-desc">Bengali misinformation classification pipeline with model comparison and evaluation.</p>
+              <div class="meta"><span class="tag">NLP</span><span class="tag">Transformers</span><span class="tag">Metrics</span></div>
+              <a class="btn" href="https://github.com/ZarinRoichi/BengaliFakeNewsDetection" target="_blank" rel="noreferrer">GitHub Repo</a>
             </div>
 
-            <hr style="border:none;border-top:1px solid var(--line); margin:18px 0;">
-
-            <h3 style="margin:0 0 10px;">Hardware &amp; IoT</h3>
-            <div class="grid two">
-              <div class="card">
-                <div class="thumbbox">Arduino • MIT App Inventor</div>
-                <div class="card-body">
-                  <p class="card-title">Offline Voice-Controlled Home Automation</p>
-                  <p class="card-text">Arduino Uno/Nano + Bluetooth; MIT App Inventor Android app; RFID security; command mapping (exact-match vs fallback) with error handling.</p>
-                  <div class="meta"><span class="tag">Arduino</span><span class="tag">Bluetooth</span><span class="tag">RFID</span></div>
-                  <div class="actions">
-                    <a class="btn" href="https://github.com/ZarinRoichi?tab=repositories&q=automation" target="_blank" rel="noreferrer">GitHub (Repo/Search)</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="card">
-                <div class="thumbbox">Computer Graphics</div>
-                <div class="card-body">
-                  <p class="card-title">DX Ball–Style Game</p>
-                  <p class="card-text">Implemented a DX Ball–style game using graphics libraries (Visual Studio 2016) and basic iGraphics work.</p>
-                  <div class="meta"><span class="tag">C/C++</span><span class="tag">Visual Studio</span><span class="tag">Graphics</span></div>
-                  <div class="actions">
-                    <a class="btn" href="https://github.com/ZarinRoichi?tab=repositories&q=dx" target="_blank" rel="noreferrer">GitHub (Repo/Search)</a>
-                  </div>
-                </div>
-              </div>
+            <div class="item">
+              <p class="item-title">Sentiment Analysis of Bengali Movie Reviews</p>
+              <p class="item-desc">Binary sentiment classification with fine-tuning experiments and evaluation workflow.</p>
+              <div class="meta"><span class="tag">Transformers</span><span class="tag">LoRA/PEFT</span><span class="tag">Pipeline</span></div>
+              <a class="btn" href="https://github.com/ZarinRoichi/SentimentAnalysisofMovieReviews" target="_blank" rel="noreferrer">GitHub Repo</a>
             </div>
 
           </div>
-        </section>
-
-        <div class="muted" style="text-align:center; margin:18px 0 0; font-size:13px;">
-          © <span id="year"></span> Zarin Tasnim Roichi • Built with GitHub Pages
         </div>
 
+        <div class="section">
+          <h3>Software Development</h3>
+          <div class="list">
+
+            <div class="item">
+              <p class="item-title">Employee Time & Attendance Tracker</p>
+              <p class="item-desc">Attendance + leave workflow + dashboards + authentication; SQL-backed web app.</p>
+              <div class="meta"><span class="tag">Web</span><span class="tag">SQL</span><span class="tag">CRUD</span></div>
+              <a class="btn" href="https://github.com/afrainakhter/Employee-Time-and-Attendance-Tracker-" target="_blank" rel="noreferrer">GitHub Repo</a>
+            </div>
+
+            <div class="item">
+              <p class="item-title">TimeVista 2.0</p>
+              <p class="item-desc">Backend-driven website with database connectivity and structured information flow.</p>
+              <div class="meta"><span class="tag">Web</span><span class="tag">DB</span></div>
+              <a class="btn" href="https://github.com/afrainakhter/TimeVista2.0" target="_blank" rel="noreferrer">GitHub Repo</a>
+            </div>
+
+            <div class="item">
+              <p class="item-title">AUST Connect</p>
+              <p class="item-desc">University social platform features: posts, notifications, chat; access control & DB handling.</p>
+              <div class="meta"><span class="tag">App</span><span class="tag">Backend</span><span class="tag">DB</span></div>
+              <a class="btn" href="https://github.com/afrainakhter/AustConnect" target="_blank" rel="noreferrer">GitHub Repo</a>
+            </div>
+
+            <div class="item">
+              <p class="item-title">Bus Ticket Management System</p>
+              <p class="item-desc">SQL-based backend system for ticket booking and management; CRUD + validations.</p>
+              <div class="meta"><span class="tag">Java</span><span class="tag">SQL</span></div>
+              <a class="btn" href="https://github.com/afrainakhter/BusTicket" target="_blank" rel="noreferrer">GitHub Repo</a>
+            </div>
+
+            <div class="item">
+              <p class="item-title">Todo App</p>
+              <p class="item-desc">A simple task management application (CRUD) for practice and clean UI handling.</p>
+              <div class="meta"><span class="tag">App</span><span class="tag">CRUD</span></div>
+              <a class="btn" href="https://github.com/ZarinRoichi/Todo-App" target="_blank" rel="noreferrer">GitHub Repo</a>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="section">
+          <h3>Hardware & IoT / Others</h3>
+          <div class="list">
+
+            <div class="item">
+              <p class="item-title">Offline Voice-Controlled Home Automation</p>
+              <p class="item-desc">Arduino + Bluetooth + Android voice-control app (offline). Also includes RFID security features.</p>
+              <div class="meta"><span class="tag">Arduino</span><span class="tag">IoT</span><span class="tag">Android</span></div>
+              <a class="btn" href="https://github.com/anika136/offline-smart-home-automation" target="_blank" rel="noreferrer">GitHub Repo</a>
+            </div>
+
+            <div class="item">
+              <p class="item-title">Computer Graphics Project</p>
+              <p class="item-desc">Graphics implementations and practice project work (C/C++ graphics).</p>
+              <div class="meta"><span class="tag">C/C++</span><span class="tag">Graphics</span></div>
+              <a class="btn" href="https://github.com/ZarinRoichi/Computer-Graphics-Project" target="_blank" rel="noreferrer">GitHub Repo</a>
+            </div>
+
+            <div class="item">
+              <p class="item-title">Compiler Lab</p>
+              <p class="item-desc">Coursework and implementations related to compiler design fundamentals.</p>
+              <div class="meta"><span class="tag">Compiler</span><span class="tag">Coursework</span></div>
+              <a class="btn" href="https://github.com/ZarinRoichi/Compiler-Lab" target="_blank" rel="noreferrer">GitHub Repo</a>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="footer">
+          © <span id="year"></span> Zarin Tasnim Roichi • Built with GitHub Pages
+        </div>
       </div>
     </main>
   </div>
@@ -249,4 +212,3 @@
   </script>
 </body>
 </html>
-
