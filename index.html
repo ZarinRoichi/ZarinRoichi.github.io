@@ -25,18 +25,27 @@
     nav a.active{color:var(--accent);text-decoration:underline;text-underline-offset:8px;text-decoration-thickness:2px}
     .hamburger{display:none;border:1px solid var(--line);background:#fff;border-radius:10px;padding:8px 10px;font-weight:800}
 
-    /* Sidebar (no boxy cards) */
+    /* Sidebar */
     .avatar{width:160px;height:160px;border-radius:999px;object-fit:cover;display:block;margin:10px auto 12px;background:#e5e7eb;border:6px solid #fff;box-shadow:0 10px 25px rgba(17,24,39,.08)}
-    .name{text-align:center;font-size:22px;font-weight:950;margin:0}
-    .tagline{text-align:center;color:var(--muted);margin:6px 0 10px;font-weight:600}
-    .pillrow{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:10px 0 12px}
-    .pill{font-size:12px;font-weight:800;color:#0b2a6f;background:#eef2ff;border:1px solid #dbe3ff;padding:6px 10px;border-radius:999px}
+    .name{text-align:center;font-size:22px;font-weight:900;margin:0}
+    .tagline{text-align:center;color:#374151;margin:6px 0 6px;font-weight:650}
+    .skills{margin:0 0 12px;text-align:center;color:var(--muted);font-size:13.5px}
 
-    .side-meta{margin:14px 0 10px;color:var(--muted);font-size:14px;text-align:center}
-    .side-links{list-style:none;padding:0;margin:12px 0 0}
+    .side-meta{margin:0 0 14px;color:var(--muted);font-size:13.5px;text-align:center}
+
+    .side-divider{height:1px;background:var(--line);margin:14px 0}
+
+    .side-links{list-style:none;padding:0;margin:0}
     .side-links li{margin:8px 0}
-    .side-links a{color:var(--text)}
+    .side-links a{
+      color:var(--text);
+      font-weight:600;
+      font-size:14px;
+      display:inline-block;
+    }
     .side-links a:hover{color:var(--accent)}
+
+    .status{margin:14px 0 0;font-size:13px;color:var(--muted);text-align:center}
 
     /* Content */
     .wrap{max-width:var(--max);margin:0 auto;padding:26px 18px 52px}
@@ -65,50 +74,28 @@
 <body>
 <div class="layout">
 
-  <!-- SIDEBAR (academic-style list) -->
-<aside>
-  <img class="avatar" src="assets/profile.jpg" alt="Zarin Tasnim Roichi"/>
+  <!-- SIDEBAR (Professional academic style) -->
+  <aside>
+    <img class="avatar" src="assets/profile.jpg" alt="Zarin Tasnim Roichi"/>
 
-  <h1 class="name">Zarin Tasnim Roichi</h1>
-  <div class="tagline">Applied ML • NLP • LLMs</div>
+    <h1 class="name">Zarin Tasnim Roichi</h1>
+    <div class="tagline">Applied Machine Learning • NLP • LLMs</div>
+    <p class="skills">Python · Transformers · SQL · Backend Systems</p>
+    <div class="side-meta">Dhaka, Bangladesh</div>
 
-  <div class="pillrow">
-    <span class="pill">Python</span>
-    <span class="pill">Transformers</span>
-    <span class="pill">SQL</span>
-    <span class="pill">Backend</span>
-  </div>
+    <div class="side-divider"></div>
 
-  <div class="side-meta">Dhaka, Bangladesh</div>
+    <ul class="side-links">
+      <li><a href="mailto:zarinroichi@gmail.com">Email</a></li>
+      <li><a href="https://www.linkedin.com/in/zarin-tasnim-roichi/" target="_blank" rel="noreferrer">LinkedIn</a></li>
+      <li><a href="https://github.com/ZarinRoichi" target="_blank" rel="noreferrer">GitHub</a></li>
+      <li><a href="resume/Zarin_Tasnim_Roichi_CV.pdf" target="_blank" rel="noreferrer">CV (PDF)</a></li>
+    </ul>
 
-  <!-- Academic-style links (NO BOXES) -->
-  <ul class="side-links">
-    <li><a href="mailto:zarinroichi@gmail.com">Email</a></li>
-    <li>
-      <a href="https://www.linkedin.com/in/zarin-tasnim-roichi/" 
-         target="_blank" rel="noreferrer">
-        LinkedIn
-      </a>
-    </li>
-    <li>
-      <a href="https://github.com/ZarinRoichi" 
-         target="_blank" rel="noreferrer">
-        GitHub
-      </a>
-    </li>
-    <li>
-      <a href="resume/Zarin_Tasnim_Roichi_CV.pdf" 
-         target="_blank" rel="noreferrer">
-        CV (PDF)
-      </a>
-    </li>
-  </ul>
+    <div class="side-divider"></div>
 
-  <p class="muted" style="margin:16px 0 0;font-size:13px;text-align:center">
-    CSE graduate (AUST) • Open to research & ML roles
-  </p>
-</aside>
-
+    <p class="status">CSE graduate (AUST) · Open to research & ML roles</p>
+  </aside>
 
   <!-- MAIN -->
   <main>
